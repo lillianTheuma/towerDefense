@@ -1,19 +1,36 @@
-import { pingPong } from './ping-pong';
-import Character from './character.js';
-import Enemy from './enemy.js';
-import Item from './item.js';
-import Itemlist from './itemList.js'
-import './styles.css';
 import $ from 'jquery';
-
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
+import { Student } from './../student.js';
+import { StudentsOnBoard } from './../studentsOnBoard.js';
 
 $(document).ready(function() {
-  $('#ping-pong-form').submit(function(event) {
+  $('').submit(function(event) {
     event.preventDefault();
-    var goal = $('#goal').val();
-    var output = pingPong(goal);
-    output.forEach(function(element) {
-      $('#solution').append("<li>" + element + "</li>");
-    });
+    // var board = new GameBoard;
+    // var students = new StudentsOnBoard;
+    // var towers = new TowersOnBoard;
+
+    setInterval(() => {
+      // Advance student position by 1 while on board
+      // board.checkIfWon();
+      // board.time++;
+      // students.addStudent(board.time);
+
+
+    }, 1000);
+
+    // addStudent(time) {
+    //   if (time < 10 seconds) {
+    //     this.students.push(new StudentType.types[0]);
+    //   } else if (time < 20 seconds) {
+    //     this.students.push(new StudentType.types[1]);
+    //   } else if (time < 30 seconds) {
+    //     this.students.push(new StudentType.types[2]);
+    //   } else if (time >= 30 seconds) {
+    //     this.students.push(new StudentType.types[3]);
+    //   }
+    // }
   });
 });

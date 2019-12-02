@@ -1,7 +1,7 @@
 {
-  "name": "my-project",
+  "name": "towerDefense",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tower defense game",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
@@ -32,5 +32,13 @@
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lillianTheuma/towerDefense.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lillianTheuma/towerDefense/issues"
+  },
+  "homepage": "https://github.com/lillianTheuma/towerDefense#readme"
 }
