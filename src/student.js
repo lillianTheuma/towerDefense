@@ -9,6 +9,6 @@ export class Student {
   }
 
   takeDamage(number) {
-    this.health - number;
+    this.health -= number;
   }
 }
