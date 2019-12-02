@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const SRC = path.resolve(__dirname, 'src/js');
 
 
 module.exports = {
@@ -18,28 +19,35 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Ping Pong',
+      title: 'Confining the Students',
       template: './src/index.html',
       inject: 'body'
     })
   ],
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.js$/,
-        exclude: [
-            /node_modules/,
-            /spec/
+      rules: [
+        {
+          test: /\.css$/,
+          use: [
+            'style-loader',
+            'css-loader'
+          ]
+        },
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: "eslint-loader"
+        },
+        {
+          test: /\.(png|svg|jpg|gif)$/,
+          use: [
+            'file-loader',
           ],
-        loader: "eslint-loader"
-      }
-    ]
-  }
-};
+        },
+        {
+  		    test: /\.(ogg|mp3|wav|mpe?g)$/i,
+  		    use: 'file-loader'
+  			}
+      ]
+    }
+  };
