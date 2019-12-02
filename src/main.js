@@ -2,25 +2,32 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
+import Student from './../student.js';
+import StudentsOnBoard from './../studentsOnBoard.js';
+import StudentType from './../studentType.js';
 import Tower from './../tower.js';
 import TowersOnBoard from './../TowersOnBoard.js';
 import TowerTypes from './../towerTypes.js';
-import { Student } from './../student.js';
-import { StudentsOnBoard } from './../studentsOnBoard.js';
 
 $(document).ready(function() {
   $('').submit(function(event) {
     event.preventDefault();
-    // var board = new GameBoard;
-    // var students = new StudentsOnBoard;
-    // var towers = new TowersOnBoard;
+     var game = new gameState;
+     var gameStudents = new StudentsOnBoard;
+     var gameTowers = new towersOnBoard;
 
     setInterval(() => {
-      // Advance student position by 1 while on board
+      if (game.health > 0) {
+        gameStudents.advanceStudents();
+        for (let i = 0; i < 20; i++) {
+          // if (space id matches
+        }
+
+      }
       // board.checkIfWon();
       // board.time++;
       // students.addStudent(board.time);
-
+      // increment game.money
 
     }, 1000);
 
