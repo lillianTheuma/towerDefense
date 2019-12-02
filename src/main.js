@@ -2,12 +2,14 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import Student from './../student.js';
-import StudentsOnBoard from './../studentsOnBoard.js';
-import StudentType from './../studentType.js';
-import Tower from './../tower.js';
-import TowersOnBoard from './../TowersOnBoard.js';
-import TowerTypes from './../towerTypes.js';
+import Student from './student.js';
+import StudentsOnBoard from './studentsOnBoard.js';
+import StudentType from './studentType.js';
+import Tower from './tower.js';
+import TowersOnBoard from './TowersOnBoard.js';
+import TowerTypes from './towerTypes.js';
+import GameState from './gameState.js';
+import towers from './towers.json';
 
 $(document).ready(function() {
   $('').submit(function(event) {
