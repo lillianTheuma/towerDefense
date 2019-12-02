@@ -9,8 +9,8 @@ export class Student {
     this.progress = 0;
   }
 
-  takeDamage() {
-    this.currentHealth--;
+  takeDamage(number) {
+    this.currentHealth - number;
   }
 
 
