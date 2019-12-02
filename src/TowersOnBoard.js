@@ -1,4 +1,4 @@
-export default class towersOnBoard {
+export default class TowersOnBoard {
   constructor() {
     this.towers = [false, false, false, false, false],
     this.currentId = 0;
