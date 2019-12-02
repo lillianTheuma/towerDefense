@@ -1,8 +1,7 @@
 export class Student {
   constructor(health, speed, strength) {
     this.id;
-    // this.maxHealth = health;
-    this.currentHealth = health;
+    this.health = health;
     this.speed = speed;
     this.strength = strength;
     this.typeId;
@@ -10,8 +9,6 @@ export class Student {
   }
 
   takeDamage(number) {
-    this.currentHealth - number;
+    this.health - number;
   }
-
-
 }

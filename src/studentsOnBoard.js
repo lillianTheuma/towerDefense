@@ -5,7 +5,7 @@ export class StudentsOnBoard {
   }
 
   findStudentByID(id){
-    for (let i = 0; i > this.students.length; i++) {
+    for (let i = 0; i < this.students.length; i++) {
       if (this.students[i].id == id) {
         return [this.students[i], i];
       }
@@ -26,6 +26,14 @@ export class StudentsOnBoard {
       this.students.splice(i, 1);
     } else {
       console.error("invalid ID");
+    }
+  }
+
+  advanceStudents() {
+    for (let i = 0; i < this.students.length; i++) {
+      if (this.students[i].health > 0) {
+        this.students[i].position++;
+      }
     }
   }
 }
