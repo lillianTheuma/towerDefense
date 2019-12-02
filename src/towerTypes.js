@@ -1,4 +1,4 @@
-export default class towerTypes {
+export default class TowerTypes {
   constructor() {
     this.types = [];
   }
