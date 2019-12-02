@@ -11,10 +11,9 @@ export default class towersOnBoard {
     });
   return false;
   }
-  addTower(towerTypes, typeID, position) {
-    let newTower = towerTypes.types[typeID];
-    newTower.id = this.currentId;
+  addTower(tower, position) {
+    tower.id = this.currentId;
     this.currentId++;
-    this.towers[position] = newTower;
+    this.towers[position] = tower;
   }
 }
