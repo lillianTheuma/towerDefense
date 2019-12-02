@@ -1,2 +1,1 @@
-# towerDefense
-Group project for epicodus. A tower defense game where the player stops students before they can leave class!
+This is a template with a proper Node Project Manager configuration. For personal use.
