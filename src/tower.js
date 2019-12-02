@@ -5,8 +5,8 @@ export default class Tower {
     this.range = range,
     this.fireRate = fireRate,
     this.damage = damage,
-    this.typeID,
-    this.cost,
+    this.typeID = typeId,
+    this.cost = cost,
     this.position;
   }
   levelUp(base) {
@@ -14,7 +14,8 @@ export default class Tower {
     this.damage += base.damage;
     this.range += (base.range / 2);
   }
-  nearestStudent() {
-    // requires student objects to work
+  nearestStudent(student) {
+    // This math is going to require using a student object
+    console.error(student+" No YOU deal with this");
   }
 }

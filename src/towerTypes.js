@@ -3,10 +3,11 @@ export default class TowerTypes {
     this.types = [];
   }
   findTowerByID(id) {
-    this.towers.forEach(function(tower) {
-      if tower.id = id {
-        return tower;
+    this.types.forEach(function(type) {
+      if (type.id == id) {
+        return type;
       }
     });
-  retu
+  return false;
+  }
 }
