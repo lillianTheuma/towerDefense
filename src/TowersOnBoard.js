@@ -5,11 +5,11 @@ export default class TowersOnBoard {
   }
   findTowerByID(id) {
     this.towers.forEach(function(tower) {
-      if tower.id = id {
+      if (tower.id == id) {
         return tower;
       }
     });
-  return false;
+    return false;
   }
   addTower(tower, position) {
     tower.id = this.currentId;
