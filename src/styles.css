@@ -1,3 +1,7 @@
 body {
-  background-color: #7FDBFF;
+  background-image: linear-gradient(Red,purple,black);
+}
+
+canvas{
+  border: solid green;
 }
