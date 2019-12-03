@@ -2,8 +2,6 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import Student from './student.js';
-import Tower from './tower.js';
 import GameState from './gameState.js';
 import Brain from './img/brain.png';
 import Jail from './img/jail2.jpeg';
@@ -19,9 +17,9 @@ $(document).ready(function() {
   $('#start').click(function(event) {
      $('#start').hide();
      let game = new GameState();
+     console.log(game)
      let creationMode = null;
      let time = 0;
-     let newStudent = new StudentType;
      let spaceNumber = 53;
      let towerNumber = 5;
      attachContactListeners();
@@ -33,13 +31,14 @@ $(document).ready(function() {
 
         // Adding students every second
         if (time < 10) {
-          game.students.addStudent(newStudent.types[0]);
+          console.log(game.studentTypes.types[0]);
+          game.students.addStudent(game.studentTypes.types[0]);
         } else if (time < 20) {
-          game.students.addStudent(newStudent.types[1]);
+          game.students.addStudent(game.studentTypes.types[1]);
         } else if (time < 30) {
-          game.students.addStudent(newStudent.types[2]);
+          game.students.addStudent(game.studentTypes.types[2]);
         } else {
-          game.students.addStudent(newStudent.types[3]);
+          game.students.addStudent(game.studentTypes.types[0]);
         }
         game.students.advanceStudents();
         game.students.checkHealth();
@@ -61,7 +60,16 @@ $(document).ready(function() {
       // students.addStudent(board.time);
 
     }, 1000);
-
+    let towerTick = 0;
+    setInterval(() => {
+      towerTick++;
+      game.towers.towers.forEach(function(tower) {
+        if (tower) {
+            const target = tower.findTarget(this.students);
+            this.students[target].takeDamage(tower.damage);
+        }
+      });
+    }, 250);
     function attachContactListeners() {
       $("#towerSelection").on("click", "button", function() {
         if (this.id == "tower3") {
