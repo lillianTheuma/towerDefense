@@ -1,5 +1,7 @@
 body {
-  background-image: linear-gradient(Red,purple,black);
+  /* background-image: linear-gradient(Red,purple,black); */
+  background-image: url('img/zombieSign.jpeg');
+
 }
 
 canvas{

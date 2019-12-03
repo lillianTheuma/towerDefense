@@ -27,7 +27,7 @@ module.exports = {
   module: {
       rules: [
         {
-          test: /\.css$/,
+          test: /\.css$/i,
           use: [
             'style-loader',
             'css-loader'
@@ -39,15 +39,19 @@ module.exports = {
           loader: "eslint-loader"
         },
         {
-          test: /\.(png|svg|jpg|gif)$/,
+          test: /\.(png|svg|jpg|jpeg|gif)$/,
           use: [
             'file-loader',
           ],
         },
         {
   		    test: /\.(ogg|mp3|wav|mpe?g)$/i,
-  		    use: 'file-loader'
-  			}
+  		    use: 'file-loader',
+  			},
+        {
+          test: /\.(png|jpg)$/,
+          loader: 'url-loader'
+        }
       ]
     }
   };
