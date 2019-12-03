@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Confining the Students</title>
+        <link href="https://fonts.googleapis.com/css?family=Finger+Paint|Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <title>Keep the Zombies Contained</title>
   </head>
   <body>
     <div id="top">
 
-      <h1>Confining the Students</h1>
-      <h3>The students have become zombies and are brain dead from coding! Dont let the zombies escape!</h3>
+      <h1><span class="ZombieFont">Keep the Zombies Contained!</span></h1>
+      <h3><span class="ZombieFont">The students have become zombies and are brain dead from coding! Dont let the zombies escape!</span></h3>
     </div>
     <!-- <img src="" alt=""> zombie stamp-->
-  <canvas id="canvas" width="300" height="300">
+    <div class="gradient">
+
+  <canvas id="canvas" width="500" height="500">
 <p>game</p>
   </canvas>
+</div>
   <button id="start" type="button" name="button"></button>
   <div id="towerSelection">
     <!-- <option value=""></option> use for tower object? -->
@@ -25,10 +29,11 @@
 
   </div>
   <div id="score">
-  <img src="../src/img/brain.png" alt="picture of a brain">
+    <div id="brainImage">
+  </div>
 <!-- students youve prevented from leaving -->
   </div>
-  <button type="button" name="button"></button>
+  <button class="glow-on-hover" type="button" name="button"></button>
   </body>
 </html>
 <!-- need: Sound, start button for student on pathz -->

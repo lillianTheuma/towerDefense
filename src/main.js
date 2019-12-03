@@ -9,10 +9,18 @@ import Tower from './tower.js';
 import TowersOnBoard from './TowersOnBoard.js';
 import TowerTypes from './towerTypes.js';
 import GameState from './gameState.js';
-import towers from './towers.json';
+// import towers from './towers.json';
+// import Brain from './img/brain.png';
+// import Jail from './img/jail2.jpeg';
+//
+// $(document).ready(function() {
+//   $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
+//     $('#jailBanner').html("<img id='jailPic'src='"+Jail+"' alt='Image of a jail cell'>");
+//
+// });
 
 $(document).ready(function() {
-  $('#start').click(function() {
+  $('#start').click(function(event) {
      $('#start').hide();
      let game = new GameState;
      let creationMode = null;

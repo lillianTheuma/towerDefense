@@ -1,7 +1,22 @@
 body {
-  background-image: linear-gradient(Red,purple,black);
+background-image: url('img/jail.jpeg');
+background-repeat: no-repeat;
+background-size: cover;
+
 }
 
+.ZombieFont{
+/* font-family: 'Gloria Hallelujah', cursive; */
+font-family: 'Finger Paint', cursive;
+color: red;
+}
+
+
+
 canvas{
-  border: solid green;
+  width: 200px;
+  border: 30px solid;
+  border-image: repeating-linear-gradient(#E22B1A, #E28F1A, #D1E21A 30px) 30;
+  padding: 20px;
+
 }
