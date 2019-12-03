@@ -15,14 +15,14 @@ import GameState from './gameState.js';
 
 $(document).ready(function() {
   $('#start').click(function(event) {
-    $('#start').hide();
-    let game = new GameState(new TowersOnBoard(), towers, new StudentsOnBoard(), students);
-    console.log(game);
-    let creationMode = null;
-    let time = 0;
-    attachContactListeners();
-
-    let newStudent = new StudentType;
+     $('#start').hide();
+     let game = new GameState();
+     let creationMode = null;
+     let time = 0;
+     let newStudent = new StudentType;
+     let spaceNumber = 53;
+     let towerNumber = 5;
+     attachContactListeners();
 
     setInterval(() => {
       if (game.health > 0) {
@@ -40,16 +40,15 @@ $(document).ready(function() {
           game.students.addStudent(newStudent.types[3]);
         }
         game.students.advanceStudents();
+        game.students.checkHealth();
 
-        // Pruning out dead students
-        for (let i = 0; i < game.students.length; i++) {
-          if (game.students[i].health < 1) {
-            game.students.removeStudent(i);
-          }
-          if (game.students[i].progress > 10) {
-            game.health -= 10;
-          }
-        }
+        // Increment game health down - gameState.js
+
+        // for (let i = 0; i < game.students.length; i++) {
+        //   if (game.students[i].progress > 10) {
+        //     game.health -= 10;
+        //   }
+        // }
 
         game.money += 10;
       } else {
@@ -73,15 +72,16 @@ $(document).ready(function() {
 
   });
 
-  // pseudocode for spaces functionality ----------------
+  // pseudocode for spaces functionality ---------------
 
-  // spaces.on("click", "button", function() {
-  //   let space = this.id;
-  //   if (!space.tower) {
-  //     spaces.addTower(creationMode);
-  //   } else {
-  //     spaces.tower.levelUp(base);
-  //   }
-  // });
+  $(".spaces").on("click", "p", function() {
+    let space = this.id;
+      if (game.towers.towers[space]) {
+        game.towers.towers[space].levelUp(base);
+      } else {
+        game.towers.towers.addTower(creationMode, space);
+      }
+
+  });
 
 });
