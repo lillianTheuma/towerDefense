@@ -1,4 +1,4 @@
-export class StudentsOnBoard {
+export default class StudentsOnBoard {
   constructor() {
     this.students = [];
     this.currentId = 0;
