@@ -5,15 +5,17 @@ import './styles.css';
 import Student from './student.js';
 import Tower from './tower.js';
 import GameState from './gameState.js';
+import Brain from './img/brain.png';
+import Jail from './img/jail2.jpeg';
+import GameOver from './img/gameOver.jpg';
 
-//
-// $(document).ready(function() {
-//   $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
-//     $('#jailBanner').html("<img id='jailPic'src='"+Jail+"' alt='Image of a jail cell'>");
-//
-// });
 
 $(document).ready(function() {
+// $('.jail').addClass();
+// $('.jail').removeClass();
+// $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
+//     $('#jailBanner').html("<img id='jailPic'src='"+Jail+"' alt='Image of a jail cell'>");
+
   $('#start').click(function(event) {
      $('#start').hide();
      let game = new GameState();
@@ -69,19 +71,5 @@ $(document).ready(function() {
         console.log("should print out name of button: " + this.id);
       });
     }
-
   });
-
-  // pseudocode for spaces functionality ---------------
-
-  $(".spaces").on("click", "p", function() {
-    let space = this.id;
-      if (game.towers.towers[space]) {
-        game.towers.towers[space].levelUp(base);
-      } else {
-        game.towers.towers.addTower(creationMode, space);
-      }
-
-  });
-
 });
