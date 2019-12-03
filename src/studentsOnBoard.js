@@ -32,7 +32,7 @@ export class StudentsOnBoard {
   advanceStudents() {
     for (let i = 0; i < this.students.length; i++) {
       if (this.students[i].health > 0) {
-        this.students[i].position++;
+        this.students[i].progress++;
       }
     }
   }
