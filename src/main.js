@@ -3,15 +3,9 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import Student from './student.js';
-import StudentsOnBoard from './studentsOnBoard.js';
-import StudentType from './studentType.js';
 import Tower from './tower.js';
-import TowersOnBoard from './TowersOnBoard.js';
-import TowerTypes from './towerTypes.js';
 import GameState from './gameState.js';
-// import towers from './towers.json';
-// import Brain from './img/brain.png';
-// import Jail from './img/jail2.jpeg';
+
 //
 // $(document).ready(function() {
 //   $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
@@ -21,13 +15,14 @@ import GameState from './gameState.js';
 
 $(document).ready(function() {
   $('#start').click(function(event) {
-     $('#start').hide();
-     let game = new GameState;
-     let creationMode = null;
-     let time = 0;
-     attachContactListeners();
+    $('#start').hide();
+    let game = new GameState(new TowersOnBoard(), towers, new StudentsOnBoard(), students);
+    console.log(game);
+    let creationMode = null;
+    let time = 0;
+    attachContactListeners();
 
-     let newStudent = new StudentType;
+    let newStudent = new StudentType;
 
     setInterval(() => {
       if (game.health > 0) {

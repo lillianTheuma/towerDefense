@@ -1,3 +1,8 @@
+import TowerTypes from './towerTypes.js';
+import StudentTypes  from './studentType.js';
+import TowerOnBoard from './TowersOnBoard.js';
+import StudentsOnBoard from './studentsOnBoard';
+
 export default class GameState {
   constructor(towers, towerTypes, students, studentTypes) {
     this.towers = towers,
