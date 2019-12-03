@@ -12,26 +12,29 @@ import GameState from './gameState.js';
 import towers from './towers.json';
 
 $(document).ready(function() {
-  $('#start').submit(function(event) {
-    event.preventDefault();
+  $('#start').click(function() {
+     $('#start').hide();
      let game = new GameState;
      let creationMode = null;
      let time = 0;
 
+     // not working for some fucking reason but will fix soon
+     let newStudent = new StudentType;
+
     setInterval(() => {
       if (game.health > 0) {
-        time++;
         console.log(time);
+        time++;
 
         // Adding students every second
         if (time < 10) {
-          game.students.addStudent(new StudentType[0]);
+          game.students.addStudent(newStudent.types[0]);
         } else if (time < 20) {
-          game.students.addStudent(new StudentType[1]);
+          game.students.addStudent(newStudent.types[0]);
         } else if (time < 30) {
-          game.students.addStudent(new StudentType[2]);
+          game.students.addStudent(newStudent.types[0]);
         } else {
-          game.students.addStudent(new StudentType[3]);
+          game.students.addStudent(newStudent.types[0]);
         }
         game.students.advanceStudents();
 
@@ -53,19 +56,19 @@ $(document).ready(function() {
       // board.checkIfWon();
       // board.time++;
       // students.addStudent(board.time);
-      // increment game.money
 
     }, 1000);
 
     $("#makeTower1").click(function() {
-      creationMode = towerType1;
+      creationMode = game.towers.types[0];
     });
 
     // may not work correctly because of weird timing things
     function attachContactListeners() {
       for (let i = 0; i < 5; i++) {
-        $(".spaces").on("click", "p#" + i, function() {
-          // if (spaceHasTower) {
+
+        $("#towerSelection").on("click", "button#tower" + (i + 1), function() {
+          // if ( space has tower ) {
           //   game.upgradeTower();
           // } else {
           //   game.buyTower(creationMode, i);
