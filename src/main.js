@@ -9,74 +9,78 @@ import Tower from './tower.js';
 import TowersOnBoard from './TowersOnBoard.js';
 import TowerTypes from './towerTypes.js';
 import GameState from './gameState.js';
-// import towers from './towers.json';
-// import Brain from './img/brain.png';
-// import Jail from './img/jail2.jpeg';
+import Brain from './img/brain.png';
+import Jail from './img/jail2.jpeg';
+import GameOver from './img/gameOver.jpg';
+import towers from './towers.json';
 //
-// $(document).ready(function() {
-//   $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
+$(document).ready(function() {
+
+$('.jail').addClass();
+// $('.jail').removeClass();
+// $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
 //     $('#jailBanner').html("<img id='jailPic'src='"+Jail+"' alt='Image of a jail cell'>");
 //
-// });
+});
 
-$(document).ready(function() {
-  $('#start').click(function(event) {
-     $('#start').hide();
-     let game = new GameState;
-     let creationMode = null;
-     let time = 0;
-     attachContactListeners();
-
-     let newStudent = new StudentType;
-
-    setInterval(() => {
-      if (game.health > 0) {
-        console.log(time);
-        time++;
-
-        // Adding students every second
-        if (time < 10) {
-          game.students.addStudent(newStudent.types[0]);
-        } else if (time < 20) {
-          game.students.addStudent(newStudent.types[1]);
-        } else if (time < 30) {
-          game.students.addStudent(newStudent.types[2]);
-        } else {
-          game.students.addStudent(newStudent.types[3]);
-        }
-        game.students.advanceStudents();
-
-        // Pruning out dead students
-        for (let i = 0; i < game.students.length; i++) {
-          if (game.students[i].health < 1) {
-            game.students.removeStudent(i);
-          }
-          if (game.students[i].progress > 10) {
-            game.health -= 10;
-          }
-        }
-
-        game.money += 10;
-      } else {
-        console.log("you lost");
-      }
-
-      // board.checkIfWon();
-      // students.addStudent(board.time);
-
-    }, 1000);
-
-    function attachContactListeners() {
-      $("#towerSelection").on("click", "button", function() {
-        if (this.id == "tower3") {
-          creationMode = game.towers.types[0];
-          console.log("tower3");
-        }
-        console.log("should print out name of button: " + this.id);
-      });
-    }
-
-  });
+// $(document).ready(function() {
+//   $('#start').click(function(event) {
+//      $('#start').hide();
+//      let game = new GameState;
+//      let creationMode = null;
+//      let time = 0;
+//      attachContactListeners();
+//
+//      let newStudent = new StudentType;
+//
+//     setInterval(() => {
+//       if (game.health > 0) {
+//         console.log(time);
+//         time++;
+//
+//         // Adding students every second
+//         if (time < 10) {
+//           game.students.addStudent(newStudent.types[0]);
+//         } else if (time < 20) {
+//           game.students.addStudent(newStudent.types[1]);
+//         } else if (time < 30) {
+//           game.students.addStudent(newStudent.types[2]);
+//         } else {
+//           game.students.addStudent(newStudent.types[3]);
+//         }
+//         game.students.advanceStudents();
+//
+//         // Pruning out dead students
+//         for (let i = 0; i < game.students.length; i++) {
+//           if (game.students[i].health < 1) {
+//             game.students.removeStudent(i);
+//           }
+//           if (game.students[i].progress > 10) {
+//             game.health -= 10;
+//           }
+//         }
+//
+//         game.money += 10;
+//       } else {
+//         console.log("you lost");
+//       }
+//
+//       // board.checkIfWon();
+//       // students.addStudent(board.time);
+//
+//     }, 1000);
+//
+//     function attachContactListeners() {
+//       $("#towerSelection").on("click", "button", function() {
+//         if (this.id == "tower3") {
+//           creationMode = game.towers.types[0];
+//           console.log("tower3");
+//         }
+//         console.log("should print out name of button: " + this.id);
+//       });
+//     }
+//
+//   });
 
   // pseudocode for spaces functionality ----------------
 
@@ -89,4 +93,4 @@ $(document).ready(function() {
   //   }
   // });
 
-});
+// });

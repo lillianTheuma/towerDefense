@@ -1,39 +1,263 @@
 <!DOCTYPE html>
 <html>
-  <head>
-        <link href="https://fonts.googleapis.com/css?family=Finger+Paint|Gloria+Hallelujah&display=swap" rel="stylesheet">
-    <title>Keep the Zombies Contained</title>
-  </head>
-  <body>
-    <div id="top">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Finger+Paint|Gloria+Hallelujah&display=swap" rel="stylesheet">
+  <title>Keep the Zombies Contained</title>
+</head>
+<body class="jail">
+  <div id="top">
 
-      <h1><span class="ZombieFont">Keep the Zombies Contained!</span></h1>
-      <h3><span class="ZombieFont">The students have become zombies and are brain dead from coding! Dont let the zombies escape!</span></h3>
-    </div>
-    <!-- <img src="" alt=""> zombie stamp-->
-    <div class="gradient">
+    <h1><span class="ZombieFont">Keep the Zombies Contained!</span></h1>
+    <h5><span class="ZombieFont">The students have become zombies and are brain dead from coding! Dont let the zombies escape!</span></h5>
+  </div>
 
-  <canvas id="canvas" width="500" height="500">
-<p>game</p>
-  </canvas>
+
+  <table id = 'gameTable'>
+    <tr>
+      <th id='00-00'></th>
+      <th id='00-01'></th>
+      <th id='00-02'></th>
+      <th id='00-03'></th>
+      <th id='00-04'></th>
+      <th id='00-05'></th>
+      <th id='00-06'></th>
+      <th id='00-07'></th>
+      <th id='00-08'></th>
+      <th id='00-09'></th>
+      <th id='00-10'></th>
+      <th id='00-11'></th>
+      <th id='00-12'></th>
+    </tr>
+    <tr>
+        <th id='00-00'></th>
+        <th id='01-01'></th>
+        <th id='01-02'></th>
+        <th id='01-03'></th>
+        <th id='01-04'></th>
+        <th id='01-05'></th>
+        <th id='01-06'></th>
+        <th id='01-07'></th>
+        <th id='01-08'></th>
+        <th id='01-09'></th>
+        <th id='01-10'></th>
+        <th id='01-11'></th>
+        <th id='01-12'></th>
+    </tr>
+    <tr>
+      <th id='02-00'></th>
+      <th id='02-01'></th>
+      <th id='02-02'></th>
+      <th id='02-03'></th>
+      <th id='02-04'></th>
+      <th id='02-05'></th>
+      <th id='02-06'></th>
+      <th id='02-07'></th>
+      <th id='02-08'></th>
+      <th id='02-09'></th>
+      <th id='02-10'></th>
+      <th id='02-11'></th>
+      <th id='02-12'></th>
+    </tr>
+    <!-- <tr>
+      <th id='00-00'></th>
+      <th id='00-01'></th>
+      <th id='00-02'></th>
+      <th id='00-03'></th>
+      <th id='00-04'></th>
+      <th id='00-05'></th>
+      <th id='00-06'></th>
+      <th id='00-07'></th>
+      <th id='00-08'></th>
+      <th id='00-09'></th>
+      <th id='00-10'></th>
+      <th id='00-11'></th>
+      <th id='00-12'></th>
+    </tr>
+    <tr>
+      <th id='00-00'></th>
+      <th id='00-01'></th>
+      <th id='00-02'></th>
+      <th id='00-03'></th>
+      <th id='00-04'></th>
+      <th id='00-05'></th>
+      <th id='00-06'></th>
+      <th id='00-07'></th>
+      <th id='00-08'></th>
+      <th id='00-09'></th>
+      <th id='00-10'></th>
+      <th id='00-11'></th>
+      <th id='00-12'></th>
+    </tr>
+    <tr>
+      <th id='00-00'></th>
+      <th id='00-01'></th>
+      <th id='00-02'></th>
+      <th id='00-03'></th>
+      <th id='00-04'></th>
+      <th id='00-05'></th>
+      <th id='00-06'></th>
+      <th id='00-07'></th>
+      <th id='00-08'></th>
+      <th id='00-09'></th>
+      <th id='00-10'></th>
+      <th id='00-11'></th>
+      <th id='00-12'></th>
+    </tr>
+    <tr>
+      <th id='00-00'></th>
+      <th id='00-01'></th>
+      <th id='00-02'></th>
+      <th id='00-03'></th>
+      <th id='00-04'></th>
+      <th id='00-05'></th>
+      <th id='00-06'></th>
+      <th id='00-07'></th>
+      <th id='00-08'></th>
+      <th id='00-09'></th>
+      <th id='00-10'></th>
+      <th id='00-11'></th>
+      <th id='00-12'></th>
+    </tr>
+    <tr>
+      <th id='00-00'></th>
+      <th id='00-01'></th>
+      <th id='00-02'></th>
+      <th id='00-03'></th>
+      <th id='00-04'></th>
+      <th id='00-05'></th>
+      <th id='00-06'></th>
+      <th id='00-07'></th>
+      <th id='00-08'></th>
+      <th id='00-09'></th>
+      <th id='00-10'></th>
+      <th id='00-11'></th>
+      <th id='00-12'></th>
+    </tr>
+    <tr>
+      <th id='00-00'></th>
+      <th id='00-01'></th>
+      <th id='00-02'></th>
+      <th id='00-03'></th>
+      <th id='00-04'></th>
+      <th id='00-05'></th>
+      <th id='00-06'></th>
+      <th id='00-07'></th>
+      <th id='00-08'></th>
+      <th id='00-09'></th>
+      <th id='00-10'></th>
+      <th id='00-11'></th>
+      <th id='00-12'></th>
+    </tr>
+    <tr>
+      <th id='00-00'></th>
+      <th id='00-01'></th>
+      <th id='00-02'></th>
+      <th id='00-03'></th>
+      <th id='00-04'></th>
+      <th id='00-05'></th>
+      <th id='00-06'></th>
+      <th id='00-07'></th>
+      <th id='00-08'></th>
+      <th id='00-09'></th>
+      <th id='00-10'></th>
+      <th id='00-11'></th>
+      <th id='00-12'></th>
+    </tr>
+    <tr>
+      <th id='00-00'></th>
+      <th id='00-01'></th>
+      <th id='00-02'></th>
+      <th id='00-03'></th>
+      <th id='00-04'></th>
+      <th id='00-05'></th>
+      <th id='00-06'></th>
+      <th id='00-07'></th>
+      <th id='00-08'></th>
+      <th id='00-09'></th>
+      <th id='00-10'></th>
+      <th id='00-11'></th>
+      <th id='00-12'></th>
+    </tr>
+    <tr>
+      <th id='00-00'></th>
+      <th id='00-01'></th>
+      <th id='00-02'></th>
+      <th id='00-03'></th>
+      <th id='00-04'></th>
+      <th id='00-05'></th>
+      <th id='00-06'></th>
+      <th id='00-07'></th>
+      <th id='00-08'></th>
+      <th id='00-09'></th>
+      <th id='00-10'></th>
+      <th id='00-11'></th>
+      <th id='00-12'></th>
+    </tr>
+    <tr>
+      <th id='00-00'></th>
+      <th id='00-01'></th>
+      <th id='00-02'></th>
+      <th id='00-03'></th>
+      <th id='00-04'></th>
+      <th id='00-05'></th>
+      <th id='00-06'></th>
+      <th id='00-07'></th>
+      <th id='00-08'></th>
+      <th id='00-09'></th>
+      <th id='00-10'></th>
+      <th id='00-11'></th>
+      <th id='00-12'></th>
+    </tr>
+    <tr>
+      <th id='00-00'></th>
+      <th id='00-01'></th>
+      <th id='00-02'></th>
+      <th id='00-03'></th>
+      <th id='00-04'></th>
+      <th id='00-05'></th>
+      <th id='00-06'></th>
+      <th id='00-07'></th>
+      <th id='00-08'></th>
+      <th id='00-09'></th>
+      <th id='00-10'></th>
+      <th id='00-11'></th>
+      <th id='00-12'></th>
+    </tr>
+    <tr>
+      <th id='00-00'></th>
+      <th id='00-01'></th>
+      <th id='00-02'></th>
+      <th id='00-03'></th>
+      <th id='00-04'></th>
+      <th id='00-05'></th>
+      <th id='00-06'></th>
+      <th id='00-07'></th>
+      <th id='00-08'></th>
+      <th id='00-09'></th>
+      <th id='00-10'></th>
+      <th id='00-11'></th>
+      <th id='00-12'></th>
+    </tr> -->
+
+  </table>
+
+<div id="towerSelection">
+  <!-- <option value=""></option> use for tower object? -->
+  <button id="tower1" type="button" name="button">Tower1</button>
+  <button id="tower2" type="button" name="button">Tower2</button>
+  <button id="tower3" type="button" name="button">Tower3</button>
 </div>
+<div id="dialog">
+
+</div>
+<div id="score">
   <button id="start" type="button" name="button"></button>
-  <div id="towerSelection">
-    <!-- <option value=""></option> use for tower object? -->
-    <button id="tower1" type="button" name="button">Tower1</button>
-    <button id="tower2" type="button" name="button">Tower2</button>
-    <button id="tower3" type="button" name="button">Tower3</button>
+  <div id="brainImage">
+  </div>
+  <!-- students youve prevented from leaving -->
+</div>
 
-  </div>
-  <div id="dialog">
-
-  </div>
-  <div id="score">
-    <div id="brainImage">
-  </div>
-<!-- students youve prevented from leaving -->
-  </div>
-  <button class="glow-on-hover" type="button" name="button"></button>
-  </body>
+<
+</body>
 </html>
 <!-- need: Sound, start button for student on pathz -->

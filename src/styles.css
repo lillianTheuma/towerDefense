@@ -1,4 +1,4 @@
-body {
+.jail {
 background-image: url('img/jail.jpeg');
 background-repeat: no-repeat;
 background-size: cover;
@@ -11,12 +11,14 @@ font-family: 'Finger Paint', cursive;
 color: red;
 }
 
-
+#gameTable{
+color:white;
+}
 
 canvas{
   width: 200px;
   border: 30px solid;
-  border-image: repeating-linear-gradient(#E22B1A, #E28F1A, #D1E21A 30px) 30;
+  border-image: linear-gradient(#E22B1A, #E28F1A, #D1E21A 30px) 30;
   padding: 20px;
 
 }
