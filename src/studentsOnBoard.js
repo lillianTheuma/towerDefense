@@ -31,8 +31,14 @@ export class StudentsOnBoard {
 
   advanceStudents() {
     for (let i = 0; i < this.students.length; i++) {
-      if (this.students[i].health > 0) {
-        this.students[i].progress++;
+      this.students[i].progress++;
+    }
+  }
+
+  checkHealth() {
+    for (let i = 0; i < this.students.length; i++) {
+      if (this.students[i].health < 0) {
+        this.students.removeStudent(i);
       }
     }
   }
