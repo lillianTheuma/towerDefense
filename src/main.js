@@ -3,6 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import GameState from './gameState.js';
+import Student from './student.js';
 import Brain from './img/brain.png';
 import Jail from './img/jail2.jpeg';
 import GameOver from './img/gameOver.jpg';
@@ -31,15 +32,16 @@ $(document).ready(function() {
 
         // Adding students every second
         if (time < 10) {
-          console.log(game.studentTypes.types[0]);
-          game.students.addStudent(game.studentTypes.types[0]);
+
+          game.students.addStudent(new Student(1,1,1));
         } else if (time < 20) {
-          game.students.addStudent(game.studentTypes.types[1]);
+          game.students.addStudent(new Student(2,1,2));
         } else if (time < 30) {
-          game.students.addStudent(game.studentTypes.types[2]);
+          game.students.addStudent(new Student(4,1,4));
         } else {
-          game.students.addStudent(game.studentTypes.types[0]);
+          game.students.addStudent(new Student());
         }
+        console.log(game.students.students);
         game.students.advanceStudents();
         game.students.checkHealth();
 
@@ -66,6 +68,9 @@ $(document).ready(function() {
       game.towers.towers.forEach(function(tower) {
         if (tower) {
             const target = tower.findTarget(this.students);
+            if (target) {
+              this.students[target].takeDamage(tower.damage);
+            }
             this.students[target].takeDamage(tower.damage);
         }
       });
