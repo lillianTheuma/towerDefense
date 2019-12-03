@@ -9,8 +9,6 @@ import Tower from './tower.js';
 import TowersOnBoard from './TowersOnBoard.js';
 import TowerTypes from './towerTypes.js';
 import GameState from './gameState.js';
-import Space from './space.js';
-import Spaces from './spaces.js';
 // import towers from './towers.json';
 // import Brain from './img/brain.png';
 // import Jail from './img/jail2.jpeg';
@@ -24,12 +22,13 @@ import Spaces from './spaces.js';
 $(document).ready(function() {
   $('#start').click(function(event) {
      $('#start').hide();
-     let game = new GameState;
+     let game = new GameState();
      let creationMode = null;
      let time = 0;
-     attachContactListeners();
-
      let newStudent = new StudentType;
+     let spaceNumber = 53;
+     let towerNumber = 5;
+     attachContactListeners();
 
     setInterval(() => {
       if (game.health > 0) {
@@ -47,16 +46,15 @@ $(document).ready(function() {
           game.students.addStudent(newStudent.types[3]);
         }
         game.students.advanceStudents();
+        game.students.checkHealth();
 
-        // Pruning out dead students
-        for (let i = 0; i < game.students.length; i++) {
-          if (game.students[i].health < 1) {
-            game.students.removeStudent(i);
-          }
-          if (game.students[i].progress > 10) {
-            game.health -= 10;
-          }
-        }
+        // Increment game health down - gameState.js
+
+        // for (let i = 0; i < game.students.length; i++) {
+        //   if (game.students[i].progress > 10) {
+        //     game.health -= 10;
+        //   }
+        // }
 
         game.money += 10;
       } else {
@@ -84,15 +82,11 @@ $(document).ready(function() {
 
   $(".spaces").on("click", "p", function() {
     let space = this.id;
-    if (space.type == "tower") {
-      if (!space.occupied) {
-        spaces.addTower(creationMode);
+      if (game.towers.towers[space]) {
+        game.towers.towers[space].levelUp(base);
       } else {
-        spaces.tower.levelUp(base);
+        game.towers.towers.addTower(creationMode, space);
       }
-    } else {
-      console.log("No tower-building there");
-    }
 
   });
 
