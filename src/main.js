@@ -9,6 +9,7 @@ import Tower from './tower.js';
 import TowersOnBoard from './TowersOnBoard.js';
 import TowerTypes from './towerTypes.js';
 import GameState from './gameState.js';
+import towers from './towers.json';
 
 $(document).ready(function() {
   $('#start').submit(function(event) {

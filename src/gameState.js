@@ -8,28 +8,27 @@ export default class GameState {
     this.money = 1000;
   }
   buyTower(typeID, position) {
-    if (towerTypes.findTowerByID(typeID).cost <= this.money) {
-      tower = towerTypes[typeID];
-      towers.addTower(tower, position);
-      this.money -= towerTypes.findTowerByID(typeID).cost;
+    if (this.towerTypes.findTowerByID(typeID).cost <= this.money) {
+      let tower = this.towerTypes[typeID];
+      this.towers.addTower(tower, position);
+      this.money -= this.towerTypes.findTowerByID(typeID).cost;
       return true;
-    } else if (towerTypes.findTowerByID(typeID){
-      console.log()
+    } else if (this.towerTypes.findTowerByID(typeID)){
+      console.log("You cannot afford this upgrade");
     } else {
       console.error("You are attempting to buy a tower with an invalid type ID!");
       return false ;
     }
   }
   upgradeTower(position) {
-    const price = this.towers[position].price * (this.towers[i].level + 1);
-    if (money >= price) {
-      tower.levelUp(this.towerTypes[this.towers.typeId]);
+    const price = this.towers[position].price * (this.towers[position].level + 1);
+    if (this.money >= price) {
+      this.towers[position].levelUp(this.towerTypes[this.towers.typeId]);
       this.money -= price;
-    } else if (!this.towers[posiiton]){
+    } else if (!this.towers[position]){
       console.warn("The tower you are attempting to upgrade is not present!");
     } else {
       console.error("You are attempting to upgrade a tower at an invalid location!");
     }
   }
-
 }
