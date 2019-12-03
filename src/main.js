@@ -9,6 +9,8 @@ import Tower from './tower.js';
 import TowersOnBoard from './TowersOnBoard.js';
 import TowerTypes from './towerTypes.js';
 import GameState from './gameState.js';
+import Space from './space.js';
+import Spaces from './spaces.js';
 // import towers from './towers.json';
 // import Brain from './img/brain.png';
 // import Jail from './img/jail2.jpeg';
@@ -78,15 +80,20 @@ $(document).ready(function() {
 
   });
 
-  // pseudocode for spaces functionality ----------------
+  // pseudocode for spaces functionality ---------------
 
-  // spaces.on("click", "button", function() {
-  //   let space = this.id;
-  //   if (!space.tower) {
-  //     spaces.addTower(creationMode);
-  //   } else {
-  //     spaces.tower.levelUp(base);
-  //   }
-  // });
+  $(".spaces").on("click", "p", function() {
+    let space = this.id;
+    if (space.type == "tower") {
+      if (!space.occupied) {
+        spaces.addTower(creationMode);
+      } else {
+        spaces.tower.levelUp(base);
+      }
+    } else {
+      console.log("No tower-building there");
+    }
+
+  });
 
 });
