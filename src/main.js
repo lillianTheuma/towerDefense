@@ -32,6 +32,7 @@ $(document).ready(function() {
 
         // Adding students every second
         if (time < 10) {
+
           game.students.addStudent(new Student(1,1,1));
         } else if (time < 20) {
           game.students.addStudent(new Student(2,1,2));
@@ -70,6 +71,7 @@ $(document).ready(function() {
             if (target) {
               this.students[target].takeDamage(tower.damage);
             }
+            this.students[target].takeDamage(tower.damage);
         }
       });
     }, 250);
