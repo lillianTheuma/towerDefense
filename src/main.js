@@ -17,8 +17,8 @@ $(document).ready(function() {
      let game = new GameState;
      let creationMode = null;
      let time = 0;
+     attachContactListeners();
 
-     // not working for some fucking reason but will fix soon
      let newStudent = new StudentType;
 
     setInterval(() => {
@@ -30,11 +30,11 @@ $(document).ready(function() {
         if (time < 10) {
           game.students.addStudent(newStudent.types[0]);
         } else if (time < 20) {
-          game.students.addStudent(newStudent.types[0]);
+          game.students.addStudent(newStudent.types[1]);
         } else if (time < 30) {
-          game.students.addStudent(newStudent.types[0]);
+          game.students.addStudent(newStudent.types[2]);
         } else {
-          game.students.addStudent(newStudent.types[0]);
+          game.students.addStudent(newStudent.types[3]);
         }
         game.students.advanceStudents();
 
@@ -50,31 +50,35 @@ $(document).ready(function() {
 
         game.money += 10;
       } else {
-        // you lost function
+        console.log("you lost");
       }
 
       // board.checkIfWon();
-      // board.time++;
       // students.addStudent(board.time);
 
     }, 1000);
 
-    $("#makeTower1").click(function() {
-      creationMode = game.towers.types[0];
-    });
-
-    // may not work correctly because of weird timing things
     function attachContactListeners() {
-      for (let i = 0; i < 5; i++) {
-
-        $("#towerSelection").on("click", "button#tower" + (i + 1), function() {
-          // if ( space has tower ) {
-          //   game.upgradeTower();
-          // } else {
-          //   game.buyTower(creationMode, i);
-          // }
-        });
-      }
+      $("#towerSelection").on("click", "button", function() {
+        if (this.id == "tower3") {
+          creationMode = game.towers.types[0];
+          console.log("tower3");
+        }
+        console.log("should print out name of button: " + this.id);
+      });
     }
+
   });
+
+  // pseudocode for spaces functionality ----------------
+
+  // spaces.on("click", "button", function() {
+  //   let space = this.id;
+  //   if (!space.tower) {
+  //     spaces.addTower(creationMode);
+  //   } else {
+  //     spaces.tower.levelUp(base);
+  //   }
+  // });
+
 });

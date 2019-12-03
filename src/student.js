@@ -1,4 +1,4 @@
-export class Student {
+export default class Student {
   constructor(health, speed, strength) {
     this.id;
     this.health = health;
