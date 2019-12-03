@@ -15,8 +15,6 @@ $(document).ready(function() {
 // $('.jail').removeClass();
 // $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
 //     $('#jailBanner').html("<img id='jailPic'src='"+Jail+"' alt='Image of a jail cell'>");
-//
-});
 
   $('#start').click(function(event) {
      $('#start').hide();
