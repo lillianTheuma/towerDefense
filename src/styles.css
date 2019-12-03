@@ -1,9 +1,44 @@
 body {
   /* background-image: linear-gradient(Red,purple,black); */
-  background-image: url('img/zombieSign.jpeg');
+  /* background-image: url('img/zombieSign.jpeg'); */
+  background-image: url('img/bg.jpg');
 
+  /* background-repeat: no-repeat;
+  background-size: auto; */
+    background-size: cover;
+
+
+}
+/* #jailPic{
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  /* filter: grayscale(100%); */ */
+
+
+}
+#jailBanner{
+  color:pink;
 }
 
 canvas{
   border: solid green;
+}
+#tower1{
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+#tower1:hover {background-color: #3e8e41}
+
+#tower1:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

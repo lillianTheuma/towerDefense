@@ -3,6 +3,8 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import Brain from './img/brain.png';
+import Jail from './img/jail2.jpeg';
+
 // import Student from './student.js';
 // import StudentsOnBoard from './studentsOnBoard.js';
 // import StudentType from './studentType.js';
@@ -49,5 +51,6 @@ import Brain from './img/brain.png';
 // });
 $(document).ready(function() {
   $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
+    // $('#jailBanner').html("<img id='jailPic'src='"+Jail+"' alt='Image of a jail cell'>");
 
 });
