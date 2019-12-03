@@ -1,5 +1,4 @@
 import TowerTypes from './towerTypes.js';
-import StudentTypes  from './studentType.js';
 import TowersOnBoard from './TowersOnBoard.js';
 import StudentsOnBoard from './studentsOnBoard';
 import Tower from './tower.js';
@@ -9,7 +8,6 @@ export default class GameState {
     this.towers =  new TowersOnBoard(),
     this.towerTypes = new TowerTypes(),
     this.students = new StudentsOnBoard(),
-    this.studentTypes = new StudentTypes();
     this.health = 200,
     this.money = 1000;
   }
