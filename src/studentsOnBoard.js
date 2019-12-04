@@ -21,20 +21,20 @@ export default class StudentsOnBoard {
   }
 
   removeStudent(id) {
-    const student = this.findStudentByID(id);
-    if (student) {
-      const i = student[1];
-      this.students.splice(i, 1);
-    } else {
-      console.error("invalid ID");
-    }
+    let newStudents = [];
+    this.students.forEach(function(student) {
+      if (!(student.id == id)) {
+        newStudents.push(student);
+      }
+    });
+    this.students = newStudents;
   }
 
   advanceStudents() {
     console.log("Advancing students");
     this.students.forEach(function(student) {
       student.progress+=student.speed;
-    })
+    });
   }
 
   checkHealth() {
@@ -43,5 +43,15 @@ export default class StudentsOnBoard {
         this.students.removeStudent(i);
       }
     }
+  }
+  checkEscapes() {
+    let escapes = 0;
+    for (let i = 0; i < this.students.length; i++) {
+      if (this.students[i].progress > 53) {
+        escapes+=this.students[i].strength;
+        this.removeStudent(this.students[i].id);
+      }
+    }
+    return escapes;
   }
 }
