@@ -86,4 +86,7 @@ $(document).ready(function() {
       });
     }
   });
+  $('#testSquare').click(function(event) {
+    console.log("square clicked");
+  });
 });
