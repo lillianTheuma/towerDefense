@@ -10,10 +10,23 @@ background-image: url('img/gameOver.jpg');
   font-family: 'Finger Paint', cursive;
   text-shadow: 2px  #1E4207;
   font-variant: small-caps slashed-zero;
-  font-size: 30px;
+  font-size: 25px;
+  word-spacing: 1px;
+  line-height: 20px;
   color:#3e8e41;
 }
 
+#start{
+
+  color: red;
+  background-image: url('img/start.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 500px;
+  border-radius: 15px;
+  filter: grayscale(50%);
+  box-shadow: 5px 10px grey;
+}
 
 #mapDiv {
   border-radius: 15px;
@@ -71,6 +84,7 @@ float: right;
   background-repeat: no-repeat;
   height: 200px;
   width: 200px;
+  filter: grayscale(50%);
 }
 
 td {
