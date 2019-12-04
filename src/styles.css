@@ -24,7 +24,11 @@ float: right;
   border: 1px solid red;
 }
 
-
+#mapDiv {
+  width: 1024px;
+  height: 768px;
+  background-image: url('img/gameAssets/map1.png');
+}
 
 .ZombieFont{
 font-family: 'Finger Paint', cursive;
