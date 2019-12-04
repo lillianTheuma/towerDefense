@@ -45,10 +45,6 @@ background-image: url('img/gameOver.jpg');
   text-shadow: 2px 2px 5px #1E4207;
 }
 
-#towerDump {
-  background: url ('./img/gameAssets/tower1_tier1.png');
-}
-
 #dialog{
   font-family:'Special Elite', cursive;
   font-size: 20px;
@@ -64,9 +60,8 @@ background-image: url('img/gameOver.jpg');
   border-style: inset;
 }
 
-
 td {
   width: 64px;
   height: 64px;
-  border: solid black;
+  /* border: solid black; */
 }
