@@ -122,7 +122,6 @@ $("#0x2").html(sprite_tower3_t3R);
 $("#0x3").html(sprite_tower3_t3L);
 $("#0x4").html(sprite_tower3_t3R);
 
-
 $(document).ready(function() {
   // $('.jail').addClass();
   // $('.jail').removeClass();
@@ -137,6 +136,7 @@ $(document).ready(function() {
     let time = 0;
     let spaceNumber = 53;
     let towerNumber = 5;
+    let movingRight = [0, 1, 2, 6, 7,8, 9, 12, 13, 14, 15, 16, 17, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 52];
 
     setInterval(() => {
       for (var i = 0; i < 53; i++) {
@@ -166,9 +166,17 @@ $(document).ready(function() {
       } else {
         console.log("you lost");
       }
-    for (let i = 0; i < game.students.students.length; i++) {
-      $("#path" + game.students.students[i].progress).text("student here");
-    }
+      for (let i = 0; i < game.students.students.length; i++) {
+        let j = game.students.students[i].progress;
+        console.log(movingRight);
+
+        if (movingRight.includes(j)) {
+          const newStudent = new Image();
+          newStudent.src = zombieRight;
+          console.log(zombieRight);
+          $("#path" + game.students.students[i].progress).append(newStudent);
+        }
+      }
 
       // board.checkIfWon();
 
