@@ -7,17 +7,24 @@ background-size: contain;
 .apocalypse{
 background-image: url('img/gameOver.jpg');
 } */
-#scoreBoard {
+
+#brainImage {
   background-image: url('img/brain.png');
+  background-repeat: no-repeat;
+  height:600px;
+  width: 600px;
+}
+
+#scoreBoard {
   font-family: 'Finger Paint', cursive;
   text-shadow: 2px  #1E4207;
   font-variant: small-caps slashed-zero;
   font-size: 30px;
-  background-size: contain;
   color:#3e8e41;
 }
 
 #towerSelection {
+
   float: right;
   width: 300px;
   height: 200px;
@@ -42,10 +49,6 @@ background-image: url('img/gameOver.jpg');
   background: url ('./img/gameAssets/tower1_tier1.png');
 }
 
-#gameTable{
-  color: white;
-}
-
 #dialog{
   font-family:'Special Elite', cursive;
   font-size: 20px;
@@ -60,6 +63,7 @@ background-image: url('img/gameOver.jpg');
   border:10px solid grey;
   border-style: inset;
 }
+
 
 td {
   width: 64;
