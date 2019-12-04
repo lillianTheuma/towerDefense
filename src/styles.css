@@ -33,8 +33,11 @@ background-image: url('img/gameOver.jpg');
 
 .zombieFont{
   font-family: 'Finger Paint', cursive;
-  color: red;
+  color: #2A4FAA;
   text-shadow: 2px 2px 5px #1E4207;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
 }
 
 #towerDump {
@@ -43,17 +46,19 @@ background-image: url('img/gameOver.jpg');
 
 #dialog{
 padding:20px;
-  font-family:'Special Elite', cursive;
-  font-size: 20px;
-  color: white;
-  font-variant: small-caps slashed-zero;
-  line-height: 150%;
-  height: 200px;
-  width: 1000px;
-  border-radius: 15px;
-  background-color: #1E4207;
-  border:10px solid grey;
-  border-style: inset;
+letter-spacing:3px;
+word-spacing: 2px;
+font-family:'Special Elite', cursive;
+font-size: 20px;
+color: white;
+font-variant: small-caps slashed-zero;
+line-height: 150%;
+height: 200px;
+width: 1000px;
+border-radius: 15px;
+background-color: #02071D;
+border:10px solid grey;
+border-style: inset;
 }
 
 
