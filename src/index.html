@@ -5,27 +5,41 @@
 
   <title>Keep the Zombies Contained</title>
 </head>
-<body class="jail">
-  <div id="head">
-
-    <h1><span class="ZombieFont">Keep the Students Contained!</span></h1>
-
+<body class='apocalypse'>
+  <div id="zombieFont">
+    <h1>Keep the Zombies Contained!</h1>
+    <div class="startButton">
+      <button class="button" id="start" type="button" name="button">START</button>
+    </div>
   </div>
 
-  <div class="startButton">
-  <button class="button" id="start" type="button" name="button">START</button>
-  </div>
+  <div class="conatiner">
+    <div id="dialog">
+      <h5>THE STUDENTS HAVE BECOME ZOMBIES!  DON'T LET THEM INFECT THE CITY!</h5>
+      <div id="brainImage">
+        <div id="scoreBoard">
+          <p>zombies harvested:<span id="score">
+          </span></p>
+        </div>
+      </div>
+      <p>possible story line here:</p>
 
-    <h5><span class="ZombieFont">The clocks froze at 4:44 and the students cannot leave early. Stop them from escaping!</span></h5>
-  </div>
+      <div id="towerSelection">
+        <button id="tower1" type="button" name="button">Tower1</button>
+        <br>
+        <button id="tower2" type="button" name="button">Tower2</button>
+        <br>
+        <button id="tower3" type="button" name="button">Tower3</button>
+      </div>
 
-  <div id="towerSelection">
-    <!-- <option value=""></option> use for tower object? -->
-    <button id="selectTower1" type="button" name="button">Tower1</button>
-    <button id="selectTower2" type="button" name="button">Tower2</button>
-    <button id="selectTower3" type="button" name="button">Tower3</button>
-  </div>
-
+      <div id="upgradeTowerSelection">
+        <button id="tower1" type="button" name="button">Tower1</button>
+        <br>
+        <button id="tower2" type="button" name="button">Tower2</button>
+        <br>
+        <button id="tower3" type="button" name="button">Tower3</button>
+      </div>
+    </div>
 
   <div id="mapDiv">
   <table id="Table_01" width="1024" height="768" border="0" cellpadding="0" cellspacing="0">
@@ -247,17 +261,6 @@
     	</tr>
     </table>
   </div>
-
-  <div id="dialog">
-    <p>possible story line here:</p>
-    <p>and more here</p>
-    <p>how does this look?</p>
-  </div>
-  <div id="brainImage">
-    <div id="scoreBoard">
-      <p>zombies harvested:<span id="score">
-      </span></p>
-    </div>
   </div>
 
 </body>

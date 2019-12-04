@@ -1,63 +1,84 @@
-/* .jail {
-background-image: url('img/smashedwindow.jpg');
-background-repeat: no-repeat;
-background-size: contain;
-
+body{
+  background-color: #03050C;
 }
-.apocalypse{
+/* .apocalypse{
 background-image: url('img/gameOver.jpg');
-} */
+}  */
 
-#brainImage {
-  background-image: url('img/brain.png');
-  background-repeat: no-repeat;
-  height:600px;
-  width: 600px;
-}
 
 #scoreBoard {
   font-family: 'Finger Paint', cursive;
   text-shadow: 2px  #1E4207;
   font-variant: small-caps slashed-zero;
-  font-size: 30px;
+  font-size: 25px;
+  word-spacing: 1px;
+  line-height: 20px;
   color:#3e8e41;
 }
 
-#towerSelection {
-
-  float: right;
-  width: 300px;
-  height: 200px;
-  padding: 50px;
-  border: 1px solid red;
+#start{
+  color: red;
+  background-image: url('img/start.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 500px;
+  border-radius: 15px;
+  filter: grayscale(50%);
+  box-shadow: 5px 10px grey;
 }
 
 #mapDiv {
-  position: absolute;
+  border-radius: 15px;
+  background-color: #02071D;
+  border:10px solid grey;
+  border-style: inset;
   width: 1024px;
   height: 768px;
   background-image: url('img/gameAssets/map1.png');
 }
 
-.ZombieFont{
+#zombieFont{
   font-family: 'Finger Paint', cursive;
-  color: red;
-  text-shadow: 2px 2px 5px #1E4207;
+  color: #3e8e41;
+  text-shadow: 2px 2px 5px ;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #02071D;
+  border:10px solid grey;
+  border-style: inset;
+}
+
+#towerSelection {
+  float: right;
 }
 
 #dialog{
-  font-family:'Special Elite', cursive;
-  font-size: 20px;
-  /* font-weight: bold; */
-  color: white;
-  font-variant: small-caps slashed-zero;
-  line-height: 150%;
-  height: 300px;
-  width: 700px;
-  border-radius: 15px;
-  background-color: #1E4207;
-  border:10px solid grey;
-  border-style: inset;
+padding:20px;
+letter-spacing:3px;
+word-spacing: 2px;
+font-family:'Special Elite', cursive;
+font-size: 20px;
+color: white;
+font-variant: small-caps slashed-zero;
+line-height: 150%;
+width: 300px;
+height: 700px;
+border-radius: 15px;
+background-color: #02071D;
+border:10px solid grey;
+border-style: inset;
+float: right;
+}
+
+#brainImage {
+  background-image: url('img/brain.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+  filter: grayscale(50%);
 }
 
 td {
