@@ -27,6 +27,9 @@ $(document).ready(function() {
     let towerNumber = 5;
 
     setInterval(() => {
+      for (var i = 0; i < 53; i++) {
+        $("#path" + i).html("");
+      }
       if (game.health > 0) {
         console.log(time);
         time++;
@@ -43,6 +46,7 @@ $(document).ready(function() {
           game.students.addStudent(new Student());
         }
         game.students.advanceStudents();
+
         game.health -= game.students.checkEscapes();
         // Increment game health down - gameState.js
         console.log(game);
@@ -50,9 +54,11 @@ $(document).ready(function() {
       } else {
         console.log("you lost");
       }
+    for (let i = 0; i < game.students.students.length; i++) {
+      $("#path" + game.students.students[i].progress).text("student here");
+    }
 
       // board.checkIfWon();
-      // students.addStudent(board.time);
 
     }, 1000);
     let towerTick = 0;
@@ -77,9 +83,13 @@ $(document).ready(function() {
         }
         console.log("should print out name of button: " + this.id);
       });
+      $('#mapDiv').on("click", "td", function() {
+        for (let i = 0; i < 5; i++) {
+          if (this.id == "tower" + i) {
+            console.log("tower" + i);
+          }
+        }
+      });
     }
-  });
-  $('#testSquare').click(function(event) {
-    console.log("square clicked");
   });
 });

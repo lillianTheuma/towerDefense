@@ -7,18 +7,17 @@
 </head>
 <body class="jail">
   <div id="head">
-
     <h1><span class="ZombieFont">Keep the Students Contained!</span></h1>
-    <div id="dialog">
-      <p>possible story line here:</p>
-      <p>and more here</p>
-      <p>how does this look?</p>
-    </div>
-    <button class="button" id="start" type="button" name="button">START</button>
-    <h5><span class="ZombieFont">The clocks were frozen at 4:44 and the students can't leave! Stop them from escaping!</span></h5>
+  </div>
+
+  <div class="startButton">
+  <button class="button" id="start" type="button" name="button">START</button>
   </div>
 
 
+
+    <h5><span class="ZombieFont">The clocks froze at 4:44 and the students cannot leave early. Stop them from escaping!</span></h5>
+  </div>
 
   <div id="towerSelection">
     <!-- <option value=""></option> use for tower object? -->
@@ -26,9 +25,9 @@
     <button id="tower2" type="button" name="button">Tower2</button>
     <button id="tower3" type="button" name="button">Tower3</button>
   </div>
-  <div id="dialog">
 
- <div id="mapDiv">
+
+  <div id="mapDiv">
   <table id="Table_01" width="1024" height="768" border="0" cellpadding="0" cellspacing="0">
     	<tr>
     		<td id="testSquare"></td>
@@ -49,6 +48,9 @@
     		<td></td>
     	</tr>
     	<tr>
+    		<td id="path0"></td>
+    		<td id="path1"></td>
+    		<td id="path2"></td>
     		<td></td>
     		<td></td>
     		<td></td>
@@ -58,9 +60,114 @@
     		<td></td>
     		<td></td>
     		<td></td>
+    		<td id="tower0"></td>
     		<td></td>
     		<td></td>
     		<td></td>
+    	</tr>
+    	<tr>
+    		<td></td>
+    		<td></td>
+    		<td id="path3"></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td id="path11"></td>
+    		<td id="path12"></td>
+    		<td id="path13"></td>
+    		<td id="path14"></td>
+    		<td id="path15"></td>
+    		<td id="path16"></td>
+    		<td id="path17"></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td></td>
+    		<td></td>
+    		<td id="path4"></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td id="path10"></td>
+    		<td></td>
+    		<td></td>
+    		<td id="tower1"></td>
+    		<td></td>
+    		<td></td>
+    		<td id="path18"></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td></td>
+    		<td></td>
+    		<td id="path5"></td>
+    		<td id="path6"></td>
+    		<td id="path7"></td>
+    		<td id="path8"></td>
+    		<td id="path9"></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td id="path19"></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td id="tower2"></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td id="path20"></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td id="path34"></td>
+    		<td id="path33"></td>
+    		<td id="path32"></td>
+    		<td id="path31"></td>
+    		<td id="path30"></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td id="path22"></td>
+    		<td id="path21"></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td id="path35"></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td id="path29"></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td id="path23"></td>
     		<td></td>
     		<td></td>
     		<td></td>
@@ -70,6 +177,25 @@
     		<td></td>
     		<td></td>
     		<td></td>
+    		<td id="path36"></td>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td id="path28"></td>
+    		<td id="path27"></td>
+    		<td id="path26"></td>
+    		<td id="path25"></td>
+    		<td id="path24"></td>
+    		<td></td>
+    		<td></td>
+    		<td id="path51"></td>
+    		<td id="path52"></td>
+    	</tr>
+    	<tr>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+    		<td id="path37"></td>
     		<td></td>
     		<td></td>
     		<td></td>
@@ -78,161 +204,34 @@
     		<td></td>
     		<td></td>
     		<td></td>
+    		<td id="tower3"></td>
     		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
+    		<td id="path50"></td>
     		<td></td>
     	</tr>
     	<tr>
     		<td></td>
     		<td></td>
     		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
+    		<td id="path38"></td>
+    		<td id="path39"></td>
+    		<td id="path40"></td>
+    		<td id="path41"></td>
+    		<td id="path42"></td>
+    		<td id="path43"></td>
+    		<td id="path44"></td>
+    		<td id="path45"></td>
+    		<td id="path46"></td>
+    		<td id="path47"></td>
+    		<td id="path48"></td>
+    		<td id="path49"></td>
+    		<td</td>
     	</tr>
     	<tr>
     		<td></td>
     		<td></td>
     		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
+    		<td id="tower4"></td>
     		<td></td>
     		<td></td>
     		<td></td>
@@ -248,27 +247,17 @@
     	</tr>
     </table>
   </div>
-  <br>
-<div id="towerSelection">
-  <!-- <option value=""></option> use for tower object? -->
-  <button id="tower1" type="button" name="button">Tower1</button>
-  <button id="tower2" type="button" name="button">Tower2</button>
-  <button id="tower3" type="button" name="button">Tower3</button>
-</div>
-<div id="dialog">
 
-</div>
-
+  <div id="dialog">
+    <p>possible story line here:</p>
+    <p>and more here</p>
+    <p>how does this look?</p>
   </div>
-  <div id="scoreBoard">
-    <div id="score">
-      <button id="start" type="button" name="button"></button>
-      <div id="brainImage">
-        <p>zombies harvested:<span id="score">
-        </span></p>
-      </div>
+  <div id="brainImage">
+    <div id="scoreBoard">
+      <p>zombies harvested:<span id="score">
+      </span></p>
     </div>
-
   </div>
 
 </body>
