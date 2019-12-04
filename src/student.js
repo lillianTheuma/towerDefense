@@ -1,10 +1,10 @@
 export default class Student {
   constructor(health, speed, strength) {
-    this.id;
-    this.health = health;
-    this.speed = speed;
-    this.strength = strength;
-    this.typeId;
+    this.id,
+    this.health = health,
+    this.speed = speed,
+    this.strength = strength,
+    this.typeId,
     this.progress = 0;
   }
 

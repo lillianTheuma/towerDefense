@@ -12,19 +12,19 @@ import GameOver from './img/gameOver.jpg';
 
 
 $(document).ready(function() {
-// $('.jail').addClass();
-// $('.jail').removeClass();
-// $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
-//     $('#jailBanner').html("<img id='jailPic'src='"+Jail+"' alt='Image of a jail cell'>");
+  // $('.jail').addClass();
+  // $('.jail').removeClass();
+  // $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
+  //     $('#jailBanner').html("<img id='jailPic'src='"+Jail+"' alt='Image of a jail cell'>");
   $('#start').click(function(event) {
-     $('#start').hide();
-     attachContactListeners();
-     let game = new GameState();
-     console.log(game)
-     let creationMode = null;
-     let time = 0;
-     let spaceNumber = 53;
-     let towerNumber = 5;
+    $('#start').hide();
+    attachContactListeners();
+    let game = new GameState();
+    console.log(game)
+    let creationMode = null;
+    let time = 0;
+    let spaceNumber = 53;
+    let towerNumber = 5;
 
     setInterval(() => {
       if (game.health > 0) {
@@ -34,7 +34,7 @@ $(document).ready(function() {
         // Adding students every second
         if (time < 10) {
 
-          game.students.addStudent(new Student(1,1,1));
+          game.students.addStudent(new Student(1,15,1));
         } else if (time < 20) {
           game.students.addStudent(new Student(2,1,2));
         } else if (time < 30) {
@@ -42,19 +42,11 @@ $(document).ready(function() {
         } else {
           game.students.addStudent(new Student());
         }
-        console.log(game.students.students);
         game.students.advanceStudents();
-        game.students.checkHealth();
-
+        game.health -= game.students.checkEscapes();
         // Increment game health down - gameState.js
+        console.log(game);
 
-        for (let i = 0; i < game.students.length; i++) {
-          if (game.students[i].progress > 10) {
-            game.health -= 20;
-          }
-        }
-
-        game.money += 10;
       } else {
         console.log("you lost");
       }
@@ -68,13 +60,14 @@ $(document).ready(function() {
       towerTick++;
       game.towers.towers.forEach(function(tower) {
         if (tower) {
-            const target = tower.findTarget(this.students);
-            if (target) {
-              this.students[target].takeDamage(tower.damage);
-            }
+          const target = tower.findTarget(this.students);
+          if (target) {
             this.students[target].takeDamage(tower.damage);
+          }
+          this.students[target].takeDamage(tower.damage);
         }
       });
+      game.students.checkHealth();
     }, 250);
     function attachContactListeners() {
       $("#towerSelection").on("click", "button", function() {
