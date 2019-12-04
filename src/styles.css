@@ -25,12 +25,17 @@ background-image: url('img/gameOver.jpg');
   border: 1px solid red;
 }
 
+#mapDiv {
+  width: 1024px;
+  height: 768px;
+  background-image: url('img/gameAssets/map1.png');
+}
+
 .ZombieFont{
   font-family: 'Finger Paint', cursive;
   color: red;
   text-shadow: 2px 2px 5px #1E4207;
 }
-
 
 #towerDump {
   background: url ('./img/gameAssets/tower1_tier1.png');
