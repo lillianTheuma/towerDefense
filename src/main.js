@@ -2,6 +2,9 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
+import Smashedwindow from './img/smashedwindow.jpg';
+import Student from './student.js';
+import Tower from './tower.js';
 import GameState from './gameState.js';
 import Student from './student.js';
 import Brain from './img/brain.png';
@@ -9,6 +12,7 @@ import Jail from './img/jail2.jpeg';
 import GameOver from './img/gameOver.jpg';
 import tower1_tier1 from './img/gameAssets/img/tower1_tier1.png';
 
+       
 let tower1Dump = $("#tower1_tier1");
 tower1Dump.src = tower1_tier1;
 
@@ -17,7 +21,6 @@ $(document).ready(function() {
 // $('.jail').removeClass();
 // $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
 //     $('#jailBanner').html("<img id='jailPic'src='"+Jail+"' alt='Image of a jail cell'>");
-
   $('#start').click(function(event) {
      $('#start').hide();
      attachContactListeners();
@@ -88,4 +91,3 @@ $(document).ready(function() {
       });
     }
   });
-});
