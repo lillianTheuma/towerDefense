@@ -1,21 +1,22 @@
-export class StudentsOnBoard {
+export default class StudentsOnBoard {
   constructor() {
     this.students = [];
     this.currentId = 0;
   }
 
   findStudentByID(id){
-    for (let i = 0; i < this.students.length; i++) {
-      if (this.students[i].id == id) {
-        return [this.students[i], i];
+    this.students.forEach(function(student, i) {
+      if (student.id == id) {
+        return [student, i];
       }
-    }
+    });
     return false;
   }
 
   addStudent(student) {
-    student.id = this.currentId;
-    this.students.push(student);
+    const newStudent = student;
+    newStudent.id = this.currentId;
+    this.students.push(newStudent);
     this.currentId++;
   }
 
@@ -30,9 +31,10 @@ export class StudentsOnBoard {
   }
 
   advanceStudents() {
-    for (let i = 0; i < this.students.length; i++) {
-      this.students[i].progress++;
-    }
+    console.log("Advancing students");
+    this.students.forEach(function(student) {
+      student.progress+=student.speed;
+    })
   }
 
   checkHealth() {
