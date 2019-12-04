@@ -26,6 +26,7 @@ background-image: url('img/gameOver.jpg');
 }
 
 #mapDiv {
+  position: absolute;
   width: 1024px;
   height: 768px;
   background-image: url('img/gameAssets/map1.png');
@@ -63,5 +64,5 @@ background-image: url('img/gameOver.jpg');
 td {
   width: 64;
   height: 64;
-  border: solid;
+  border: solid black;
 }
