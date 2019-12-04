@@ -40,20 +40,27 @@ module.exports = {
           ],
         loader: "eslint-loader",
       },
-        {
-          test: /\.(png|svg|jpg|jpeg|gif)$/,
-          use: [
-            'file-loader',
-          ],
-        },
-        {
-  		    test: /\.(ogg|mp3|wav|mpe?g)$/i,
-  		    use: 'file-loader',
-  			},
-        {
-          test: /\.(png|jpg)$/,
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        use: [
+          'file-loader',
+        ],
+      },
+      {
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        use: 'file-loader',
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url-loader',
+        use: [{
           loader: 'url-loader',
-        }
-      ]
-    }
-  };
+          options: {
+            limit: 8000, // Convert images < 8kb to base64 strings
+            name: 'img/gameAssets/[hash]-[name].[ext]'
+          }
+        }]
+      }
+    ]
+  }
+};
