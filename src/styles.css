@@ -18,12 +18,6 @@ background-image: url('img/gameOver.jpg');
   color:#3e8e41;
 }
 
-#towerSelection {
-  float: right;
-  height: 500px;
-  padding: 30px;
-  border: 1px solid red;
-}
 
 #mapDiv {
   width: 1024px;
@@ -43,6 +37,12 @@ background-image: url('img/gameOver.jpg');
 #towerDump {
   background: url ('./img/gameAssets/tower1_tier1.png');
 }
+#towerSelection {
+  float: right;
+  height: 300px;
+  padding: 30px;
+  border: 1px solid red;
+}
 
 #dialog{
 padding:20px;
@@ -53,12 +53,13 @@ font-size: 20px;
 color: white;
 font-variant: small-caps slashed-zero;
 line-height: 150%;
-height: 200px;
-width: 1000px;
+width: 300px;
+height: 700px;
 border-radius: 15px;
 background-color: #02071D;
 border:10px solid grey;
 border-style: inset;
+float: right;
 }
 
 
