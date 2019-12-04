@@ -11,6 +11,10 @@ font-family: 'Finger Paint', cursive;
 color: red;
 }
 
+#towerDump {
+  background: url ('./img/gameAssets/tower1_tier1.png');
+}
+
 #gameTable{
 color:white;
 }

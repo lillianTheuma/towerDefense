@@ -6,10 +6,11 @@ import GameState from './gameState.js';
 import Brain from './img/brain.png';
 import Jail from './img/jail2.jpeg';
 import GameOver from './img/gameOver.jpg';
-import tower1_tier1 from './img/gameAssets/img/tower1_tier1.png';
+import tower1_tier1 from './img/gameAssets/tower1_tier1.png';
 
-let tower1Dump = $("#tower1_tier1");
-tower1Dump.src = tower1_tier1;
+const t1t1 = new Image();
+t1t1.src = tower1_tier1;
+$("#towerDump").append(t1t1);
 
 $(document).ready(function() {
 // $('.jail').addClass();
