@@ -1,14 +1,10 @@
 body{
-  background-color: black;
+  background-color: #03050C;
 }
 /* .apocalypse{
 background-image: url('img/gameOver.jpg');
 }  */
 
-#brainImage {
-  background-image: url('img/brain.png');
-  background-repeat: no-repeat;
-}
 
 #scoreBoard {
   font-family: 'Finger Paint', cursive;
@@ -20,28 +16,35 @@ background-image: url('img/gameOver.jpg');
 
 
 #mapDiv {
+  border-radius: 15px;
+  background-color: #02071D;
+  border:10px solid grey;
+  border-style: inset;
   width: 1024px;
   height: 768px;
   background-image: url('img/gameAssets/map1.png');
 }
 
-.zombieFont{
+#zombieFont{
   font-family: 'Finger Paint', cursive;
-  color: #2A4FAA;
-  text-shadow: 2px 2px 5px #1E4207;
+  color: #3e8e41;
+  text-shadow: 2px 2px 5px ;
   font-size: 30px;
   text-align: center;
   padding: 20px;
+  border-radius: 15px;
+  background-color: #02071D;
+  border:10px solid grey;
+  border-style: inset;
+
 }
 
 #towerDump {
   background: url ('./img/gameAssets/tower1_tier1.png');
 }
+
 #towerSelection {
   float: right;
-  height: 300px;
-  padding: 30px;
-  border: 1px solid red;
 }
 
 #dialog{
@@ -62,6 +65,13 @@ border-style: inset;
 float: right;
 }
 
+#brainImage {
+  background-image: url('img/brain.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+}
 
 td {
   width: 64;
