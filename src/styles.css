@@ -8,7 +8,6 @@ background-image: url('img/gameOver.jpg');
 #brainImage {
   background-image: url('img/brain.png');
   background-repeat: no-repeat;
-  flex:auto;
 }
 
 #scoreBoard {
@@ -20,14 +19,13 @@ background-image: url('img/gameOver.jpg');
 }
 
 #towerSelection {
-  width: 100px;
-  height: 100px;
-  padding: 10px;
+  float: right;
+  height: 500px;
+  padding: 30px;
   border: 1px solid red;
 }
 
 #mapDiv {
-  flex:auto;
   width: 1024px;
   height: 768px;
   background-image: url('img/gameAssets/map1.png');
