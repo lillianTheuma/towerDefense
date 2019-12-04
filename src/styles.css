@@ -7,29 +7,28 @@ background-size: contain;
 .apocalypse{
 background-image: url('img/gameOver.jpg');
 } */
-#scoreBoard{
+#scoreBoard {
   background-image: url('img/brain.png');
-font-family: 'Finger Paint', cursive;
-text-shadow: 2px  #1E4207;
-font-variant: small-caps slashed-zero;
-font-size: 30px;
-background-size: contain;
-color:#3e8e41;
+  font-family: 'Finger Paint', cursive;
+  text-shadow: 2px  #1E4207;
+  font-variant: small-caps slashed-zero;
+  font-size: 30px;
+  background-size: contain;
+  color:#3e8e41;
 }
-#towerSelection{
-float: right;
+
+#towerSelection {
+  float: right;
   width: 300px;
   height: 200px;
   padding: 50px;
   border: 1px solid red;
 }
 
-
-
 .ZombieFont{
-font-family: 'Finger Paint', cursive;
-color: red;
- text-shadow: 2px 2px 5px #1E4207;
+  font-family: 'Finger Paint', cursive;
+  color: red;
+  text-shadow: 2px 2px 5px #1E4207;
 }
 
 
@@ -38,7 +37,7 @@ color: red;
 }
 
 #gameTable{
-color:white;
+  color: white;
 }
 
 #dialog{
@@ -47,12 +46,17 @@ color:white;
   /* font-weight: bold; */
   color: white;
   font-variant: small-caps slashed-zero;
-line-height: 150%;
-height: 300px;
- width: 700px;
- border-radius: 15px;
- background-color: #1E4207;
- border:10px solid grey;
- border-style: inset;
+  line-height: 150%;
+  height: 300px;
+  width: 700px;
+  border-radius: 15px;
+  background-color: #1E4207;
+  border:10px solid grey;
+  border-style: inset;
+}
 
+td {
+  width: 64;
+  height: 64;
+  border: solid;
 }
