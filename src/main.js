@@ -17,13 +17,13 @@ $(document).ready(function() {
 
   $('#start').click(function(event) {
      $('#start').hide();
+     attachContactListeners();
      let game = new GameState();
      console.log(game)
      let creationMode = null;
      let time = 0;
      let spaceNumber = 53;
      let towerNumber = 5;
-     attachContactListeners();
 
     setInterval(() => {
       if (game.health > 0) {
@@ -47,11 +47,11 @@ $(document).ready(function() {
 
         // Increment game health down - gameState.js
 
-        // for (let i = 0; i < game.students.length; i++) {
-        //   if (game.students[i].progress > 10) {
-        //     game.health -= 10;
-        //   }
-        // }
+        for (let i = 0; i < game.students.length; i++) {
+          if (game.students[i].progress > 10) {
+            game.health -= 20;
+          }
+        }
 
         game.money += 10;
       } else {
