@@ -6,7 +6,6 @@ import Smashedwindow from './img/smashedwindow.jpg';
 import Student from './student.js';
 import Tower from './tower.js';
 import GameState from './gameState.js';
-import Student from './student.js';
 import Brain from './img/brain.png';
 import Jail from './img/jail2.jpeg';
 import GameOver from './img/gameOver.jpg';
@@ -93,3 +92,4 @@ $(document).ready(function() {
       });
     }
   });
+});
