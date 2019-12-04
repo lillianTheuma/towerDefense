@@ -17,7 +17,6 @@ background-image: url('img/gameOver.jpg');
 }
 
 #start{
-
   color: red;
   background-image: url('img/start.jpeg');
   background-repeat: no-repeat;
@@ -49,11 +48,6 @@ background-image: url('img/gameOver.jpg');
   background-color: #02071D;
   border:10px solid grey;
   border-style: inset;
-
-}
-
-#towerDump {
-  background: url ('./img/gameAssets/tower1_tier1.png');
 }
 
 #towerSelection {
@@ -88,7 +82,7 @@ float: right;
 }
 
 td {
-  width: 64;
-  height: 64;
-  border: solid black;
+  width: 64px;
+  height: 64px;
+  /* border: solid black; */
 }
