@@ -1,24 +1,55 @@
 .jail {
-background-image: url('img/jail.jpeg');
+background-image: url('img/smashedwindow.jpg');
 background-repeat: no-repeat;
 background-size: cover;
 
 }
+.apocalypse{
+background-image: url('img/gameOver.jpg');
+}
+#brainImage{
+font-family: 'Finger Paint', cursive;
+text-shadow: 2px  #1E4207;
+color:#3e8e41;
+}
+
+
 
 .ZombieFont{
-/* font-family: 'Gloria Hallelujah', cursive; */
+
 font-family: 'Finger Paint', cursive;
 color: red;
+ text-shadow: 2px 2px 5px #1E4207;
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #1E4207;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 10px 5px 5px black;
 }
 
-#gameTable{
-color:white;
+.button:hover {background-color: #24242B}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
-canvas{
-  width: 200px;
-  border: 30px solid;
-  border-image: linear-gradient(#E22B1A, #E28F1A, #D1E21A 30px) 30;
-  padding: 20px;
+#dialog{
+  font-family:'Special Elite', cursive;
+height: 400px;
+ width: 600px;
+ border-radius: 15px;
+ background-color: #1E4207;
+ border:10px solid grey;
 
 }

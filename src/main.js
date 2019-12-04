@@ -2,19 +2,26 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
+import Smashedwindow from './img/smashedwindow.jpg';
 import Student from './student.js';
 import Tower from './tower.js';
 import GameState from './gameState.js';
 import Brain from './img/brain.png';
 import Jail from './img/jail2.jpeg';
 import GameOver from './img/gameOver.jpg';
-
-
-$(document).ready(function() {
-// $('.jail').addClass();
+//////////////////////
+//ignore this please for jo  :)
+// $(document).ready(function() {
+//   $('.apocalypse').addClass();
+//   $('.apocalypse').removeClass();
+//  $('.jail').addClass();
 // $('.jail').removeClass();
-// $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
-//     $('#jailBanner').html("<img id='jailPic'src='"+Jail+"' alt='Image of a jail cell'>");
+// $("#brainImage").
+// attr('src','./img/brain.png');
+//
+//
+// attr("<img src='"+Brain+"' alt='Image of a brain'>");
+///////////////////////////////
 
   $('#start').click(function(event) {
      $('#start').hide();
@@ -72,4 +79,5 @@ $(document).ready(function() {
       });
     }
   });
-});
+
+ });
