@@ -9,6 +9,7 @@ export default class Tower {
     this.cost = cost,
     this.value = cost,
     this.position;
+    this.fullyUpgraded = false;
   }
   levelUp() {
     this.level += 1;
