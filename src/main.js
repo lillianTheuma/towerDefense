@@ -194,16 +194,40 @@ $(document).ready(function() {
 
       // function animateShot(tower){
       //   // Determine Type, get image
-      //   let img = null;
-      //   if (tower.typeID === 0){
-      //     img = new Image();
-      //     sprite_tower1_t1.src = tower1_t1;
-      //   }
-      //   else if (tower.typeID === 1){
+      //   const imgL = new Image();
+      //   const imgR = new Image();
       //
+      //   if (tower.typeID === 0 && tower.level === 1){
+      //     imgL.src = tower1_t1_fire;
       //   }
-      //   else if (tower.typeID === 2){
+      //   else if (tower.typeID === 1 && tower.level === 2){
+      //     imgL.src = tower1_t2_fire;
+      //   }
+      //   else if (tower.typeID === 2 && tower.level === 3){
+      //     imgL.src = tower1_t3L_fire;
+      //     imgR.src = tower1_t3R_fire;
+      //   }
       //
+      //   else if (tower.typeID === 0 && tower.level === 1){
+      //     imgL.src = tower2_t1_fire;
+      //   }
+      //   else if (tower.typeID === 1 && tower.level === 2){
+      //     imgL.src = tower2_t2_fire;
+      //   }
+      //   else if (tower.typeID === 2 && tower.level === 3){
+      //     imgL.src = tower2_t3L_fire;
+      //     imgR.src = tower2_t3R_fire;
+      //   }
+      //
+      //   else if (tower.typeID === 0 && tower.level === 1){
+      //     imgL.src = tower3_t1_fire;
+      //   }
+      //   else if (tower.typeID === 1 && tower.level === 2){
+      //     imgL.src = tower3_t2_fire;
+      //   }
+      //   else if (tower.typeID === 2 && tower.level === 3){
+      //     imgL.src = tower3_t3L_fire;
+      //     imgR.src = tower3_t3R_fire;
       //   }
       //   $("#tower" + tower.position).html("");
       //   $("#tower" + tower.position).append(shooty);
