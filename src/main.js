@@ -172,11 +172,14 @@ $(document).ready(function() {
               if (creationMode === game.towerTypes.types[j]) {
                 console.log(game.towers.towers);
                 // buy a tower and place on position
-                 if (game.towers.towers[i].position != i) {
+                 if (game.towers.towers[i] == false) {
+                   console.log("there is no tower at game.towers.towers[i]");
                   game.buyTower(j,i);
-                  const towerSprite = new Image();
-                  towerSprite.src = towerSprites[j][0];
-                  $("#tower" + i).append(towerSprite);
+                  if (game.towers.towers[i]) {
+                    const towerSprite = new Image();
+                    towerSprite.src = towerSprites[j][0];
+                    $("#tower" + i).append(towerSprite);
+                  }
                   // upgrade a tower currently in that position
                 } else {
                   game.upgradeTower(i);
