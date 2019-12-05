@@ -34,15 +34,17 @@ export default class GameState {
     }
   }
   upgradeTower(position) {
-    const price = this.towers[position].price * (this.towers[position].level + 1);
-    if (this.money >= price) {
-      this.towers[position].levelUp(this.towerTypes[this.towers.typeId]);
-      this.towers[position].value += price;
-      this.money -= price;
-    } else if (!this.towers[position]){
-      console.warn("The tower you are attempting to upgrade is not present!");
-    } else {
-      console.warn("You are attempting to upgrade a tower at an invalid location!");
+    if (this.towers[position].level < 3) {
+      const price = this.towers[position].price * (this.towers[position].level + 1);
+      if (this.money >= price) {
+        this.towers[position].levelUp(this.towerTypes[this.towers.typeId]);
+        this.towers[position].value += price;
+        this.money -= price;
+      } else if (!this.towers[position]){
+        console.warn("The tower you are attempting to upgrade is not present!");
+      } else {
+        console.warn("You are attempting to upgrade a tower at an invalid location!");
+      }
     }
   }
 }
