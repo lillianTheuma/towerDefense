@@ -11,22 +11,19 @@ import Jail from './img/jail2.jpeg';
 import GameOver from './img/gameOver.jpg';
 
 // Importing Game Graphics -------------------------------
+// Commented out imports are currently unused Graphics
+
 import tower1_t1 from './img/gameAssets/tower1_tier1.png';
 import tower1_t2 from './img/gameAssets/tower1_tier2.png';
-import tower1_t3 from './img/gameAssets/tower1_tier3.png';
+// import tower1_t3 from './img/gameAssets/tower1_tier3.png';
 
 import tower2_t1 from './img/gameAssets/tower2_tier1.png';
 import tower2_t2 from './img/gameAssets/tower2_tier2.png';
-import tower2_t3 from './img/gameAssets/tower2_tier3.png';
+// import tower2_t3 from './img/gameAssets/tower2_tier3.png';
 
 import tower3_t1 from './img/gameAssets/tower3_tier1.png';
 import tower3_t2 from './img/gameAssets/tower3_tier2.png';
-import tower3_t3 from './img/gameAssets/tower3_tier3.png';
-
-import zombieUp from './img/gameAssets/zombieU.png';
-import zombieDown from './img/gameAssets/zombieD.png';
-import zombieLeft from './img/gameAssets/zombieL.png';
-import zombieRight from './img/gameAssets/zombieR.png';
+// import tower3_t3 from './img/gameAssets/tower3_tier3.png';
 
 import tower1_t3L from './img/gameAssets/tower1_tier3L.png';
 import tower1_t3R from './img/gameAssets/tower1_tier3R.png';
@@ -37,11 +34,44 @@ import tower2_t3R from './img/gameAssets/tower2_tier3R.png';
 import tower3_t3L from './img/gameAssets/tower3_tier3L.png';
 import tower3_t3R from './img/gameAssets/tower3_tier3R.png';
 
+import tower1_t1_fire from './img/gameAssets/tower1_tier1_fire.png';
+import tower1_t2_fire from './img/gameAssets/tower1_tier2_fire.png';
+
+import tower1_t3L_fire from './img/gameAssets/tower1_tier3L_fire.png';
+import tower1_t3R_fire from './img/gameAssets/tower1_tier3R_fire.png';
+
+import tower2_t1_fire from './img/gameAssets/tower2_tier1_fire.png';
+import tower2_t2_fire from './img/gameAssets/tower2_tier2_fire.png';
+
+import tower2_t3L_fire from './img/gameAssets/tower2_tier3L_fire.png';
+import tower2_t3R_fire from './img/gameAssets/tower2_tier3R_fire.png';
+
+import tower3_t1_fire from './img/gameAssets/tower3_tier1_fire.png';
+import tower3_t2_fire from './img/gameAssets/tower3_tier2_fire.png';
+
+import tower3_t3L_fire from './img/gameAssets/tower3_tier3L_fire.png';
+import tower3_t3R_fire from './img/gameAssets/tower3_tier3R_fire.png';
+
+import zombieUp from './img/gameAssets/zombieU.png';
+import zombieDown from './img/gameAssets/zombieD.png';
+import zombieLeft from './img/gameAssets/zombieL.png';
+import zombieRight from './img/gameAssets/zombieR.png';
+
+// import zombie_hurt_up from './img/gameAssets/zombieU_hurt.png';
+// import zombie_hurt_down from './img/gameAssets/zombieD_hurt.png';
+// import zombie_hurt_left from './img/gameAssets/zombieL_hurt.png';
+// import zombie_hurt_right from './img/gameAssets/zombieR_hurt.png';
+
 const towerSprites = [
   [tower1_t1, tower1_t2, tower1_t3L, tower1_t3R],
   [tower2_t1, tower2_t2, tower2_t3L, tower2_t3R],
   [tower3_t1, tower3_t2, tower3_t3L, tower3_t3R]
 ];
+// const towerShootingSprites = [
+//   [tower1_t1_fire, tower1_t2_fire, tower1_t3L_fire, tower1_t3R_fire],
+//   [tower2_t1_fire, tower2_t2_fire, tower2_t3L_fire, tower2_t3R_fire],
+//   [tower3_t1_fire, tower3_t2_fire, tower3_t3L_fire, tower3_t3R_fire]
+// ];
 
 // How to make a new Sprite:
 // Make IMG Tags----------------------
@@ -56,6 +86,52 @@ const towerSprites = [
 // -------------------------------------------------------
 
 $(document).ready(function() {
+
+//   function animateShot(tower){
+//     // Determine Type, get image
+//     const imgL = new Image();
+//     const imgR = new Image();
+//
+//     if (tower.typeID === 0 && tower.level === 1){
+//       imgL.src = tower1_t1_fire;
+//     }
+//     else if (tower.typeID === 1 && tower.level === 2){
+//       imgL.src = tower1_t2_fire;
+//     }
+//     else if (tower.typeID === 2 && tower.level === 3){
+//       imgL.src = tower1_t3L_fire;
+//       imgR.src = tower1_t3R_fire;
+//     }
+//
+//     else if (tower.typeID === 0 && tower.level === 1){
+//       imgL.src = tower2_t1_fire;
+//     }
+//     else if (tower.typeID === 1 && tower.level === 2){
+//       imgL.src = tower2_t2_fire;
+//     }
+//     else if (tower.typeID === 2 && tower.level === 3){
+//       imgL.src = tower2_t3L_fire;
+//       imgR.src = tower2_t3R_fire;
+//     }
+//
+//     else if (tower.typeID === 0 && tower.level === 1){
+//       imgL.src = tower3_t1_fire;
+//     }
+//     else if (tower.typeID === 1 && tower.level === 2){
+//       imgL.src = tower3_t2_fire;
+//     }
+//     else if (tower.typeID === 2 && tower.level === 3){
+//       imgL.src = tower3_t3L_fire;
+//       imgR.src = tower3_t3R_fire;
+//     }
+//   $("#tower" + tower.position).html("");
+//   $("#tower" + tower.position).append(imgL);
+//   $("#towerR" + tower.position+1).append(imgR);
+//   setTimeout(() => {
+  //   }, 100);
+  //   $("#tower" + tower.position).html("");
+  // }
+
   // $('.jail').addClass();
   // $('.jail').removeClass();
   // $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
@@ -143,6 +219,7 @@ $(document).ready(function() {
           const target = game.towers.towers[i].findTarget(game.students, game.towers.towers[i]);
           if (target) {
             game.students[target].takeDamage(game.towers.towers[i].damage);
+            // animateShot(game.towers.towers[i]);
           }
         }
       }
@@ -172,8 +249,8 @@ $(document).ready(function() {
               if (creationMode === game.towerTypes.types[j]) {
                 console.log(game.towers.towers);
                 // buy a tower and place on position
-                 if (game.towers.towers[i] == false) {
-                   console.log("there is no tower at game.towers.towers[i]");
+                if (game.towers.towers[i] == false) {
+                  console.log("there is no tower at game.towers.towers[i]");
                   game.buyTower(j,i);
                   if (game.towers.towers[i]) {
                     const towerSprite = new Image();
@@ -182,19 +259,26 @@ $(document).ready(function() {
                   }
                   // upgrade a tower currently in that position
                 } else {
+                  console.log("pre upgrade tower level:", game.towers.towers[i].level);
                   game.upgradeTower(i);
-                  if (game.towers.towers.level === 3) {
+                  console.log("tower level:", game.towers.towers[i].level);
+                  if (game.towers.towers[i].level === 3 && !game.towers.towers[i].fullyUpgraded) {
+                    $("#tower" + i).html("");
                     const towerSpriteL = new Image();
                     const towerSpriteR = new Image();
-                    towerSpriteL.src = towerSprites[j][game.towers.towers.level];
-                    towerSpriteR.src = towerSprites[j][game.towers.towers.level+1];
+                    towerSpriteL.src = towerSprites[j][game.towers.towers[i].level-1];
+                    towerSpriteR.src = towerSprites[j][game.towers.towers[i].level];
                     $("#tower" + i).append(towerSpriteL);
                     $("#towerR" + i).append(towerSpriteR);
                   }
-                  else {
+                  else if (game.towers.towers[i].level === 2) {
+                    $("#tower" + i).html("");
                     const towerSprite = new Image();
-                    towerSprite.src = towerSprites[j][game.towers.towers.level];
+                    towerSprite.src = towerSprites[j][game.towers.towers[i].level-1];
                     $("#tower" + i).append(towerSprite);
+
+                  } else {
+                    console.log("no more upgrades!");
                   }
                 }
               }
