@@ -34,23 +34,23 @@ import tower2_t3R from './img/gameAssets/tower2_tier3R.png';
 import tower3_t3L from './img/gameAssets/tower3_tier3L.png';
 import tower3_t3R from './img/gameAssets/tower3_tier3R.png';
 
-// import tower1_t1_fire from './img/gameAssets/tower1_tier1_fire.png';
-// import tower1_t2_fire from './img/gameAssets/tower1_tier2_fire.png';
+import tower1_t1_fire from './img/gameAssets/tower1_tier1_fire.png';
+import tower1_t2_fire from './img/gameAssets/tower1_tier2_fire.png';
 
-// import tower1_t3L_fire from './img/gameAssets/tower1_tier3L_fire.png';
-// import tower1_t3R_fire from './img/gameAssets/tower1_tier3R_fire.png';
+import tower1_t3L_fire from './img/gameAssets/tower1_tier3L_fire.png';
+import tower1_t3R_fire from './img/gameAssets/tower1_tier3R_fire.png';
 
-// import tower2_t1_fire from './img/gameAssets/tower2_tier1_fire.png';
-// import tower2_t2_fire from './img/gameAssets/tower2_tier2_fire.png';
+import tower2_t1_fire from './img/gameAssets/tower2_tier1_fire.png';
+import tower2_t2_fire from './img/gameAssets/tower2_tier2_fire.png';
 
-// import tower2_t3L_fire from './img/gameAssets/tower2_tier3L_fire.png';
-// import tower2_t3R_fire from './img/gameAssets/tower2_tier3R_fire.png';
+import tower2_t3L_fire from './img/gameAssets/tower2_tier3L_fire.png';
+import tower2_t3R_fire from './img/gameAssets/tower2_tier3R_fire.png';
 
-// import tower3_t1_fire from './img/gameAssets/tower3_tier1_fire.png';
-// import tower3_t2_fire from './img/gameAssets/tower3_tier2_fire.png';
+import tower3_t1_fire from './img/gameAssets/tower3_tier1_fire.png';
+import tower3_t2_fire from './img/gameAssets/tower3_tier2_fire.png';
 
-// import tower3_t3L_fire from './img/gameAssets/tower3_tier3L_fire.png';
-// import tower3_t3R_fire from './img/gameAssets/tower3_tier3R_fire.png';
+import tower3_t3L_fire from './img/gameAssets/tower3_tier3L_fire.png';
+import tower3_t3R_fire from './img/gameAssets/tower3_tier3R_fire.png';
 
 import zombieUp from './img/gameAssets/zombieU.png';
 import zombieDown from './img/gameAssets/zombieD.png';
@@ -86,6 +86,52 @@ const towerSprites = [
 // -------------------------------------------------------
 
 $(document).ready(function() {
+
+//   function animateShot(tower){
+//     // Determine Type, get image
+//     const imgL = new Image();
+//     const imgR = new Image();
+//
+//     if (tower.typeID === 0 && tower.level === 1){
+//       imgL.src = tower1_t1_fire;
+//     }
+//     else if (tower.typeID === 1 && tower.level === 2){
+//       imgL.src = tower1_t2_fire;
+//     }
+//     else if (tower.typeID === 2 && tower.level === 3){
+//       imgL.src = tower1_t3L_fire;
+//       imgR.src = tower1_t3R_fire;
+//     }
+//
+//     else if (tower.typeID === 0 && tower.level === 1){
+//       imgL.src = tower2_t1_fire;
+//     }
+//     else if (tower.typeID === 1 && tower.level === 2){
+//       imgL.src = tower2_t2_fire;
+//     }
+//     else if (tower.typeID === 2 && tower.level === 3){
+//       imgL.src = tower2_t3L_fire;
+//       imgR.src = tower2_t3R_fire;
+//     }
+//
+//     else if (tower.typeID === 0 && tower.level === 1){
+//       imgL.src = tower3_t1_fire;
+//     }
+//     else if (tower.typeID === 1 && tower.level === 2){
+//       imgL.src = tower3_t2_fire;
+//     }
+//     else if (tower.typeID === 2 && tower.level === 3){
+//       imgL.src = tower3_t3L_fire;
+//       imgR.src = tower3_t3R_fire;
+//     }
+//   $("#tower" + tower.position).html("");
+//   $("#tower" + tower.position).append(imgL);
+//   $("#towerR" + tower.position+1).append(imgR);
+//   setTimeout(() => {
+  //   }, 100);
+  //   $("#tower" + tower.position).html("");
+  // }
+
   // $('.jail').addClass();
   // $('.jail').removeClass();
   // $("#brainImage").html("<img src='"+Brain+"' alt='Image of a brain'>");
@@ -173,6 +219,7 @@ $(document).ready(function() {
           const target = game.towers.towers[i].findTarget(game.students, game.towers.towers[i]);
           if (target) {
             game.students[target].takeDamage(game.towers.towers[i].damage);
+            // animateShot(game.towers.towers[i]);
           }
         }
       }
@@ -191,49 +238,6 @@ $(document).ready(function() {
           creationMode = game.towerTypes.types[2];
         }
       });
-
-      // function animateShot(tower){
-      //   // Determine Type, get image
-      //   const imgL = new Image();
-      //   const imgR = new Image();
-      //
-      //   if (tower.typeID === 0 && tower.level === 1){
-      //     imgL.src = tower1_t1_fire;
-      //   }
-      //   else if (tower.typeID === 1 && tower.level === 2){
-      //     imgL.src = tower1_t2_fire;
-      //   }
-      //   else if (tower.typeID === 2 && tower.level === 3){
-      //     imgL.src = tower1_t3L_fire;
-      //     imgR.src = tower1_t3R_fire;
-      //   }
-      //
-      //   else if (tower.typeID === 0 && tower.level === 1){
-      //     imgL.src = tower2_t1_fire;
-      //   }
-      //   else if (tower.typeID === 1 && tower.level === 2){
-      //     imgL.src = tower2_t2_fire;
-      //   }
-      //   else if (tower.typeID === 2 && tower.level === 3){
-      //     imgL.src = tower2_t3L_fire;
-      //     imgR.src = tower2_t3R_fire;
-      //   }
-      //
-      //   else if (tower.typeID === 0 && tower.level === 1){
-      //     imgL.src = tower3_t1_fire;
-      //   }
-      //   else if (tower.typeID === 1 && tower.level === 2){
-      //     imgL.src = tower3_t2_fire;
-      //   }
-      //   else if (tower.typeID === 2 && tower.level === 3){
-      //     imgL.src = tower3_t3L_fire;
-      //     imgR.src = tower3_t3R_fire;
-      //   }
-      //   $("#tower" + tower.position).html("");
-      //   $("#tower" + tower.position).append(shooty);
-      //   setTimeout(() => {
-      //   }, 100);
-      // }
 
       // i looks for tiles with towerTags, j goes through tower types and selects one
       $('#mapDiv').on("click", "td", function() {
