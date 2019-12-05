@@ -162,19 +162,42 @@ $(document).ready(function() {
 
     }, 500);
 
-    let towerTick = 0;
     setInterval(() => {
-      towerTick++;
-      for (let i=0;i<game.towers.towers.length;i++) {
+      for (let i = 0; i < game.towers.towers.length; i++) {
         if (game.towers.towers[i]) {
-          const target = game.towers.towers[i].findTarget(game.students, game.towers.towers[i]);
-          if (target) {
-            game.students[target].takeDamage(game.towers.towers[i].damage);
+          let targetArray = game.towers.towers[i].findTarget();
+          // for each potential target
+          for (let j = 0; j < targetArray.length; j++) {
+            // Finding which student is on the space
+            for (var k = 0; k < game.students.students.length; k++) {
+              let target = targetArray[j];
+              console.log(target);
+              // console.log(game.students.students[target]);
+              if (game.students.students[k].progress === target){
+                // console.log(game.towers.towers[i].damage);
+                game.students.students[k].takeDamage(game.towers.towers[i].damage);
+                // console.log("path" + j);
+                $("#path" + j).html("");
+              }
+            }
           }
         }
       }
-      game.money += game.students.checkHealth();
-    }, 250);
+    }, 50);
+
+    // let towerTick = 0;
+    // setInterval(() => {
+    //   towerTick++;
+    //   for (let i=0;i<game.towers.towers.length;i++) {
+    //     if (game.towers.towers[i]) {
+    //       const target = game.towers.towers[i].findTarget(game.students, game.towers.towers[i]);
+    //       if (target) {
+    //         game.students[target].takeDamage(game.towers.towers[i].damage);
+    //       }
+    //     }
+    //   }
+    //   game.money += game.students.checkHealth();
+    // }, 250);
 
     function attachContactListeners() {
       $("#towerSelection").on("click", "button", function() {
