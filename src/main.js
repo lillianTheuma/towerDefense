@@ -138,11 +138,12 @@ $(document).ready(function() {
     let towerTick = 0;
     setInterval(() => {
       towerTick++;
+      let target;
       for (let i=0;i<game.towers.towers.length;i++) {
         if (game.towers.towers[i]) {
-          const target = game.towers.towers[i].findTarget(game.students, game.towers.towers[i]);
+          target = game.towers.towers[i].findTarget(game.students, i);
           if (target) {
-            game.students[target].takeDamage(game.towers.towers[i].damage);
+            game.students.students[target].takeDamage(game.towers.towers[i].damage);
           }
         }
       }

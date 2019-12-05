@@ -42,7 +42,7 @@ export default class StudentsOnBoard {
     for (let i = 0; i < this.students.length; i++) {
       if (this.students[i].health < 0) {
         stopped += this.students[i].maxHealth;
-        this.students.removeStudent(i);
+        this.removeStudent(i);
       }
     }
     return stopped;
