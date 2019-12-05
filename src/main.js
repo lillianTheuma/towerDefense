@@ -11,6 +11,8 @@ import Jail from './img/jail2.jpeg';
 import GameOver from './img/gameOver.jpg';
 
 // Importing Game Graphics -------------------------------
+// Commented out imports are currently unused Graphics
+
 import tower1_t1 from './img/gameAssets/tower1_tier1.png';
 import tower1_t2 from './img/gameAssets/tower1_tier2.png';
 // import tower1_t3 from './img/gameAssets/tower1_tier3.png';
@@ -34,14 +36,19 @@ import tower3_t3R from './img/gameAssets/tower3_tier3R.png';
 
 // import tower1_t1_fire from './img/gameAssets/tower1_tier1_fire.png';
 // import tower1_t2_fire from './img/gameAssets/tower1_tier2_fire.png';
+
 // import tower1_t3L_fire from './img/gameAssets/tower1_tier3L_fire.png';
 // import tower1_t3R_fire from './img/gameAssets/tower1_tier3R_fire.png';
+
 // import tower2_t1_fire from './img/gameAssets/tower2_tier1_fire.png';
 // import tower2_t2_fire from './img/gameAssets/tower2_tier2_fire.png';
+
 // import tower2_t3L_fire from './img/gameAssets/tower2_tier3L_fire.png';
 // import tower2_t3R_fire from './img/gameAssets/tower2_tier3R_fire.png';
+
 // import tower3_t1_fire from './img/gameAssets/tower3_tier1_fire.png';
 // import tower3_t2_fire from './img/gameAssets/tower3_tier2_fire.png';
+
 // import tower3_t3L_fire from './img/gameAssets/tower3_tier3L_fire.png';
 // import tower3_t3R_fire from './img/gameAssets/tower3_tier3R_fire.png';
 
@@ -55,12 +62,16 @@ import zombieRight from './img/gameAssets/zombieR.png';
 // import zombie_hurt_left from './img/gameAssets/zombieL_hurt.png';
 // import zombie_hurt_right from './img/gameAssets/zombieR_hurt.png';
 
-
 const towerSprites = [
   [tower1_t1, tower1_t2, tower1_t3L, tower1_t3R],
   [tower2_t1, tower2_t2, tower2_t3L, tower2_t3R],
   [tower3_t1, tower3_t2, tower3_t3L, tower3_t3R]
 ];
+// const towerShootingSprites = [
+//   [tower1_t1_fire, tower1_t2_fire, tower1_t3L_fire, tower1_t3R_fire],
+//   [tower2_t1_fire, tower2_t2_fire, tower2_t3L_fire, tower2_t3R_fire],
+//   [tower3_t1_fire, tower3_t2_fire, tower3_t3L_fire, tower3_t3R_fire]
+// ];
 
 // How to make a new Sprite:
 // Make IMG Tags----------------------
@@ -180,6 +191,25 @@ $(document).ready(function() {
           creationMode = game.towerTypes.types[2];
         }
       });
+
+      // function animateShot(tower){
+      //   // Determine Type, get image
+      //   let img = null;
+      //   if (tower.typeID === 0){
+      //     img = new Image();
+      //     sprite_tower1_t1.src = tower1_t1;
+      //   }
+      //   else if (tower.typeID === 1){
+      //
+      //   }
+      //   else if (tower.typeID === 2){
+      //
+      //   }
+      //   $("#tower" + tower.position).html("");
+      //   $("#tower" + tower.position).append(shooty);
+      //   setTimeout(() => {
+      //   }, 100);
+      // }
 
       // i looks for tiles with towerTags, j goes through tower types and selects one
       $('#mapDiv').on("click", "td", function() {
