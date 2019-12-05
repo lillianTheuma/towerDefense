@@ -13,13 +13,17 @@ export default class GameState {
     this.money = 1000;
   }
   buyTower(typeID, position) {
-    if (this.towerTypes.findTowerByID(typeID).cost <= this.money) {
-      let tower = this.towerTypes[typeID];
+    console.log(this.towerTypes.types[typeID].cost);
+    if (this.towerTypes.types[typeID].cost <= this.money) {
+      const tower = this.towerTypes.types[typeID];
       this.towers.addTower(tower, position);
-      this.money -= this.towerTypes.findTowerByID(typeID).cost;
+      this.money -= tower.cost;
+      console.log(this.towers);
       return true;
-    } else if (this.towerTypes.findTowerByID(typeID)){
-      console.log("You cannot afford this upgrade");
+    } else if (this.towers.towers[position]){
+      console.log("There is already a tower here");
+    } else if (this.towerTypes.types[typeID].cost > this.money) {
+      console.warn("You can't afford that tower!");
     } else {
       console.error("You are attempting to buy a tower with an invalid type ID!");
       return false ;
