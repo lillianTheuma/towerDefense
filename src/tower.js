@@ -24,7 +24,7 @@ export default class Tower {
       const vertDistance = Math.abs(pathwayCoords[student.position][1]-towerPositionCoords[1]);
       const horizontalDistance = Math.abs(pathwayCoords[student.position][0]-towerPositionCoords[0]);
       const distance = Math.sqrt((Math.pow(vertDistance,2))+(Math.pow(horizontalDistance,2)));
-      if (distance > nearestTarget[0] && distance < tower.range) {
+      if (distance > nearestTarget[0] && distance < this.range) {
         nearestTarget = [distance, i];
       }
     });
