@@ -1,28 +1,98 @@
 body{
-  background-color: #03050C;
+  /* background-color: #03050C; */
 }
-/* .apocalypse{
-background-image: url('img/gameOver.jpg');
-}  */
 
-
-#start{
+.gameDisplay{
+  /* display: none; */
   background-color: black;
-  font-family: 'Segment7Standard';
-  font-weight: normal;
-  font-style: italic;
+}
+
+.apocalypse {
+  display: none;
+  font-size: 200px;
+  line-height: 100%;
+  text-align: center;
+  background-image: url('./img/gameOver.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+  position:fixed;
+  font-family: 'Finger Paint', cursive;
+  color:red;
+  text-shadow: black 3px 5px ;
+  padding-top: 100px;
+  height:100%;
+  width:100%;
+}
+
+#gameOverButton {
+padding:50px;
+font-size: 20px;
+line-height: 20%;
+border-radius: 50px;
+border: black;
+background-color: black;
+color:#66D828;
+}
+
+#start {
+  background-color: black;
   font-size: 100px;
-  /* font-family: 'digital-7', sans-serif; */
   color: red;
-  text-shadow: 1px 1px #A35855;
+  text-shadow: -8px -10px #A35855;
   padding: 50px;
   border-radius: 15px;
+  border: 10px solid grey;
   filter: grayscale(50%);
-  box-shadow: 5px 5px 5px 10px grey;
+  box-shadow: 5px 5px 10px grey;
+
 }
-.towers{
-  padding: 10px;
-  font-size: 15px;
+
+#zombieFont {
+  font-family: 'Finger Paint', cursive;
+  color: #3e8e41;
+  text-shadow: black 3px 5px ;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #02071D;
+  border:10px solid grey;
+  border-style: inset;
+}
+
+#scoreBoard {
+  color: #49F30A;
+  text-shadow: 1px 2px black;
+  font-size: 20px;
+  padding-top: 40px;
+}
+
+.towerButton {
+  padding: 10px 20px;
+  margin: 4px;
+  border:5px solid grey;
+  border-style: outset;
+}
+.towerDisplayGroup {
+  padding-left: 20px;
+  text-align: center;
+
+}
+
+#dialog {
+padding: 10px;
+font-family:'Special Elite', cursive;
+font-size: 20px;
+color: white;
+line-height: 120%;
+width: 300px;
+height: 700px;
+border-radius: 15px;
+background-color: #02071D;
+border:10px solid grey;
+border-style: inset;
+float: right;
 }
 
 #mapDiv {
@@ -35,49 +105,8 @@ background-image: url('img/gameOver.jpg');
   background-image: url('img/gameAssets/map1.png');
 }
 
-#zombieFont{
-  font-family: 'Finger Paint', cursive;
-  color: #3e8e41;
-  text-shadow: 2px 2px 5px ;
-  font-size: 30px;
-  text-align: center;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: #02071D;
-  border:10px solid grey;
-  border-style: inset;
-}
-
-#dialog{
-  padding: 20px;
-letter-spacing:4px;
-word-spacing: 2px;
-font-family:'Special Elite', cursive;
-font-size: 20px;
-color: white;
-line-height: 120%;
-width: 350px;
-height: 700px;
-border-radius: 15px;
-background-color: #02071D;
-border:10px solid grey;
-border-style: inset;
-float: right;
-}
-#scoreBoard{
-  color: #49F30A;
-  font-size: 10px;
-  text-shadow: 2px 2px yellow;
-  float: left;
-}
-title{
-
-  background-image: url('img/brain.png');
-  background-size: contain;
-}
-
 td {
   width: 64px;
   height: 64px;
   /* border: solid black; */
-}
+ }

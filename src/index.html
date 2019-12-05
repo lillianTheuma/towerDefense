@@ -2,57 +2,46 @@
 <html>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Finger+Paint|Special+Elite&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fontlibrary.org/face/segment7">
-
 
   <title>Coded Out Brains</title>
 </head>
-<body class='apocalypse'>
+<body>
+  <div class="gameDisplay">
+
   <div id="zombieFont">
     <h1>Keep the Zombies Contained!</h1>
     <div class="startButton">
-      <button class="button" id="start" type="button" name="button">4:44</button>
+      <button class="button" id="start" type="button" name="button">4:44 PM</button>
     </div>
   </div>
 
-  <div class="conatiner">
-    <div id="dialog" class='row'>
+    <div id="dialog">
       <h5>The student's brains have been ZOMBIFIED!<br>Keep them from escaping!</h5>
       <p>possible story line here:</p>
 
-  <div class="col-md-6">
+          <div class='towerDisplayGroup' id="towerSelection">
+            <p>Select Tower:</p>
+            <button id="selectTower1" class="towerButton" type="button" name="button">1</button>
 
-  <div id="towerSelection" class='towers'>
-    <p>Select Tower</p>
-    <button id="selectTower1" type="button" name="button">Tower1</button>
-    <br>
-    <button id="selectTower2" type="button" name="button">Tower2</button>
-    <br>
-    <button id="selectTower3" type="button" name="button">Tower3</button>
-  </div>
-  <div id="upgradeTowerSelection" class='towers'>
-    <p>Upgrades</p>
-    <button id="upgradeTower1" type="button" name="button">Tower1</button>
-    <br>
-    <button id="upgradeTower2" type="button" name="button">Tower2</button>
-    <br>
-    <button id="upgradeTower3" type="button" name="button">Tower3</button>
-  </div>
-</div>
-  <div class="col-md-6">
-    <div id="brainImage">
-      <div id="scoreBoard">
-        <h3>score:<span id="score">
-        </span></h3>
-        <h3>money:<span id="money">
-        </span></h3>
-        <h3>health:<span id="health">
-        </span></h3>
-      </div>
-    </div>
-  </div>
+            <button id="selectTower2" class="towerButton" type="button" name="button">2</button>
 
-</div>
+            <button id="selectTower3" class="towerButton" type="button" name="button">3</button>
+          </div>
+
+          <div class='towerDisplayGroup' id="upgradeTower">
+            <button id="upgrade" class="towerButton" type="button" name="button">UPGRADE TOWER</button>
+          </div>
+
+          <div id="scoreBoard">
+            <p>score:<span id="score">
+            </span></p>
+            <p>money:<span id="money">
+            </span></p>
+            <p>health:<span id="health">
+            </span></p>
+          </div>
+        </div>
+
 
 
   <div id="mapDiv">
@@ -275,7 +264,12 @@
     	</tr>
     </table>
   </div>
-  </div>
+</div>
+<div class="apocalypse">
+
+<p>GAME<br>OVER!</p>
+<button type="button" id='gameOverButton'>RESTART</button>
+</div>
 
 </body>
 </html>
