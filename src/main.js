@@ -79,7 +79,6 @@ $(document).ready(function() {
         $("#path" + i).html("");
       }
       if (game.health > 0) {
-        console.log(time);
         time++;
 
         // Adding students every second
@@ -96,7 +95,6 @@ $(document).ready(function() {
 
         game.health -= game.students.checkEscapes();
         // Increment game health down - gameState.js
-        console.log(game);
 
       } else {
         console.log("you lost");
@@ -104,7 +102,6 @@ $(document).ready(function() {
 
       for (let i = 0; i < game.students.students.length; i++) {
         let j = game.students.students[i].progress;
-        console.log(movingRight);
 
         if (movingRight.includes(j)) {
           const newStudent = new Image();
@@ -126,7 +123,7 @@ $(document).ready(function() {
           newStudent.src = zombieDown;
           $("#path" + game.students.students[i].progress).append(newStudent);
         }
-        else {
+        else if (j < 53 && !j) {
           console.error("WHAT DID YOU DO");
         }
       }
@@ -152,16 +149,20 @@ $(document).ready(function() {
 
     function attachContactListeners() {
       $("#towerSelection").on("click", "button", function() {
-        if (this.id == "tower3") {
-          creationMode = game.towers.types[0];
-          console.log("tower3");
+        if (this.id == "selectTower1") {
+          creationMode = game.towerTypes.types[0];
         }
-        console.log("should print out name of button: " + this.id);
+        else if (this.id == "selectTower2") {
+          creationMode = game.towerTypes.types[1];
+        }
+        else if (this.id == "selectTower3") {
+          creationMode = game.towerTypes.types[2];
+        }
       });
+
       $('#mapDiv').on("click", "td", function() {
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i <= 5; i++) {
           if (this.id == "tower" + i) {
-            console.log("tower" + i);
             const towerSprite = new Image();
             towerSprite.src = towerSprites[i][0];
             $("#tower" + i).append(towerSprite);
