@@ -148,7 +148,7 @@ $(document).ready(function() {
         }
       }
       game.money += game.students.checkHealth();
-    }, 250);
+    }, 500);
 
     function attachContactListeners() {
       $("#towerSelection").on("click", "button", function() {
