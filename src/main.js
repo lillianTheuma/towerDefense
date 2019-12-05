@@ -173,6 +173,12 @@ $(document).ready(function() {
         }
       }
 
+      setInterval(() => {
+        $("#score").text(game.score);
+        $("#health").text(game.health);
+        $("#money").text(game.money);
+      }, 225);
+
       // board.checkIfWon();
       console.log(game)
     }, 500);
