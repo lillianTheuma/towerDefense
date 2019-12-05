@@ -16,6 +16,7 @@ export default class Tower {
     this.damage += 2;
     this.range += 2;
   }
+
   findTarget(students) {
     let targeted;
     switch(this.position) {
