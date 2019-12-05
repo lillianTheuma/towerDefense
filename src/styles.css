@@ -67,7 +67,7 @@ html{
 
 #zombieFont {
   font-family: 'Finger Paint', cursive;
-  color: #3e8e41;
+  color: #5A9C40;
   text-shadow: black 3px 5px;
   font-size: 30px;
   text-align: center;
@@ -82,39 +82,44 @@ html{
   color: #49F30A;
   text-shadow: 1px 2px black;
   font-size: 20px;
-  padding-top: 40px;
+  padding-top: 100px;
+  text-align: left;
 }
 
 .towerButton {
+  background-color: #D1D6CF;
   padding: 10px 20px;
-  margin: 4px;
+  margin: 10px;
   border:5px solid grey;
   border-style: outset;
 }
-.towerDisplayGroup {
-  padding-left: 20px;
-  text-align: center;
 
+.towerDisplayGroup {
+  padding-top: 40px;
+  padding-left: 20px;
+  text-align: left;
 }
 
 #dialog {
-padding: 40px;
-font-family:'Special Elite', cursive;
-font-size: 20px;
-color: white;
-line-height: 120%;
-width: 300px;
-height: 768px;
-border-radius: 15px;
-background-color: #02071D;
-border:10px solid grey;
-border-style: inset;
-float: right;
+  text-shadow: black 3px 5px;
+  padding-top: 180px;
+  font-family:'Special Elite', cursive;
+  font-size: 20px;
+  color: grey;
+  line-height: 120%;
+  width: 300px;
+  height: 768px;
+  border-radius: 15px;
+  background-color: #02071D;
+  border:10px solid grey;
+  border-style: inset;
+  float: right;
 }
-#brainDisplay{
-  background-image: url('img/brain.png');
-  height: 100px;
-  width: 100px;
+
+#select {
+  font-size: 30px;
+  padding:10px;
+  line-height: normal;
 }
 
 #mapDiv {
