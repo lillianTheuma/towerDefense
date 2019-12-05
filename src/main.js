@@ -83,13 +83,13 @@ $(document).ready(function() {
 
         // Adding students every second
         if (time < 10) {
-          game.students.addStudent(new Student(1,15,1));
+          game.students.addStudent(new Student(1,1,1));
         } else if (time < 20) {
           game.students.addStudent(new Student(2,1,2));
         } else if (time < 30) {
           game.students.addStudent(new Student(4,1,4));
         } else {
-          game.students.addStudent(new Student());
+          game.students.addStudent(new Student(8,1,8));
         }
         game.students.advanceStudents();
 
