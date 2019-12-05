@@ -24,6 +24,7 @@ export default class StudentsOnBoard {
     let newStudents = [];
     this.students.forEach(function(student) {
       if (!(student.id == id)) {
+        console.log(id+" is not "+id)
         newStudents.push(student);
       }
     });
@@ -31,18 +32,19 @@ export default class StudentsOnBoard {
   }
 
   advanceStudents() {
-    console.log("Advancing students");
     this.students.forEach(function(student) {
       student.progress+=student.speed;
     });
   }
 
   checkHealth() {
+    console.log("checking health");
     let stopped = 0;
     for (let i = 0; i < this.students.length; i++) {
-      if (this.students[i].health < 0) {
+      if (this.students[i].health <= 0) {
+        console.log("A student is at 0 health");
         stopped += this.students[i].maxHealth;
-        this.students.removeStudent(i);
+        this.removeStudent(this.students[i].id);
       }
     }
     return stopped;

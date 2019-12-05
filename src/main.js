@@ -87,8 +87,8 @@ $(document).ready(function() {
   //     $('#jailBanner').html("<img id='jailPic'src='"+Jail+"' alt='Image of a jail cell'>");
 
   $('#start').click(function(event) {
-    $('#start').hide();
-
+    $('.startButton').hide();
+    $('.gameDisplay').show();
     attachContactListeners();
     let game = new GameState();
     let creationMode = null;
@@ -108,17 +108,32 @@ $(document).ready(function() {
         time++;
 
         // Adding students every second
-        if (time < 10) {
-          game.students.addStudent(new Student(1,1,1));
+        if (time < 5) {
+          game.students.addStudent(new Student(5,1,5));
         } else if (time < 20) {
-          game.students.addStudent(new Student(2,1,2));
+          game.students.addStudent(new Student(12,1,12));
         } else if (time < 30) {
-          game.students.addStudent(new Student(4,1,4));
+          game.students.addStudent(new Student(20,1,20));
         } else {
-          game.students.addStudent(new Student(8,1,8));
+          game.students.addStudent(new Student(50,1,50));
         }
         game.students.advanceStudents();
         game.health -= game.students.checkEscapes();
+
+        let damage;
+        game.towers.towers.forEach(function(tower) {
+          if (tower) {
+            const targets = tower.findTarget(game.students.students);
+            targets.forEach(function(target) {
+              damage = game.towers.towers[i];
+              game.students.students[target].takeDamage(damage);
+            });
+          }
+        });
+        let money = game.students.checkHealth();
+        game.money += money
+        game.score += money;
+
         // Increment game health down - gameState.js
         if (game.students.students.length === 0) {
           // You win
@@ -159,22 +174,8 @@ $(document).ready(function() {
       }
 
       // board.checkIfWon();
-
+      console.log(game)
     }, 500);
-
-    let towerTick = 0;
-    setInterval(() => {
-      towerTick++;
-      for (let i=0;i<game.towers.towers.length;i++) {
-        if (game.towers.towers[i]) {
-          const target = game.towers.towers[i].findTarget(game.students, game.towers.towers[i]);
-          if (target) {
-            game.students[target].takeDamage(game.towers.towers[i].damage);
-          }
-        }
-      }
-      game.money += game.students.checkHealth();
-    }, 250);
 
     function attachContactListeners() {
       $("#towerSelection").on("click", "button", function() {
