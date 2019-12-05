@@ -44,14 +44,14 @@ const towerSprites = [
 ];
 
 // How to make a new Sprite:
-  // Make IMG Tags----------------------
-  // const sprite_tower1_t1 = new Image();
+// Make IMG Tags----------------------
+// const sprite_tower1_t1 = new Image();
 
-  // Set URLs --------------------------
-  // sprite_tower1_t1.src = tower1_t1;
+// Set URLs --------------------------
+// sprite_tower1_t1.src = tower1_t1;
 
 // How to display a Sprite to a coordinate in the grid:
-  // $("ID_OF_SPACE").append(sprite_tower1_t1);
+// $("ID_OF_SPACE").append(sprite_tower1_t1);
 
 // -------------------------------------------------------
 
@@ -93,11 +93,16 @@ $(document).ready(function() {
         game.students.advanceStudents();
         game.health -= game.students.checkEscapes();
         // Increment game health down - gameState.js
+        if (game.students.students.length === 0) {
+          // You win
+          console.log("You win!");
+        }
 
       } else {
         console.log("you lost");
       }
 
+      // Change Zombie Direction Sprites
       for (let i = 0; i < game.students.students.length; i++) {
         let j = game.students.students[i].progress;
 
@@ -157,16 +162,37 @@ $(document).ready(function() {
         }
       });
 
+      // i looks for tiles with towerTags, j goes through tower types and selects one
       $('#mapDiv').on("click", "td", function() {
         for (let i = 0; i <= 5; i++) {
           if (this.id == "tower" + i) {
+            // Checks type
             for (let j = 0; j < 3; j++) {
-              if (creationMode == game.towerTypes.types[j]) {
-                game.buyTower(j,i);
-                if (!game.towers.towers[i]) {
+              // Looks at the type of tower you clicked, buying a tower and assigning a sprite to the space
+              if (creationMode === game.towerTypes.types[j]) {
+                console.log(game.towers.towers);
+                // buy a tower and place on position
+                 if (game.towers.towers[i].position != i) {
+                  game.buyTower(j,i);
                   const towerSprite = new Image();
                   towerSprite.src = towerSprites[j][0];
                   $("#tower" + i).append(towerSprite);
+                  // upgrade a tower currently in that position
+                } else {
+                  game.upgradeTower(i);
+                  if (game.towers.towers.level === 3) {
+                    const towerSpriteL = new Image();
+                    const towerSpriteR = new Image();
+                    towerSpriteL.src = towerSprites[j][game.towers.towers.level];
+                    towerSpriteR.src = towerSprites[j][game.towers.towers.level+1];
+                    $("#tower" + i).append(towerSpriteL);
+                    $("#towerR" + i).append(towerSpriteR);
+                  }
+                  else {
+                    const towerSprite = new Image();
+                    towerSprite.src = towerSprites[j][game.towers.towers.level];
+                    $("#tower" + i).append(towerSprite);
+                  }
                 }
               }
             }

@@ -28,7 +28,7 @@ export default class TowersOnBoard {
     }
     theTower.id = this.currentId;
     this.currentId++;
-    this.towers[position] = tower;
+    this.position = position;
   }
   removeTower(position) {
     this.towers[position] = false;
