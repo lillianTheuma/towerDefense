@@ -9,6 +9,7 @@ export default class GameState {
     this.towers =  new TowersOnBoard(),
     this.towerTypes = new TowerTypes(),
     this.students = new StudentsOnBoard(),
+    this.score = 0,
     this.health = 200,
     this.money = 1000000;
   }

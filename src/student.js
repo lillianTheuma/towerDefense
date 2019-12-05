@@ -9,7 +9,12 @@ export default class Student {
     this.progress = 0;
   }
 
-  takeDamage(number) {
-    this.health -= number;
+  takeDamage(damage) {
+    if (this.health > damage) {
+      this.health -= damage;
+    }
+    else {
+      this.health = 0;
+    }
   }
 }

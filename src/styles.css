@@ -2,7 +2,7 @@ html{
   background-color: black;
 }
 .gameDisplay{
-  /* display: none; */
+  display: none;
   background-color: black;
 }
 
@@ -38,7 +38,7 @@ html{
   filter: saturate(300%);
 }
 .startButton{
-  display: none;
+
   padding-top: 20px;
   padding-left: 100px;
   padding-right: 100px;

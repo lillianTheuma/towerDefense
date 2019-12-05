@@ -16,21 +16,34 @@ export default class Tower {
     this.damage += 2;
     this.range += 2;
   }
-  findTarget() {
-    let targets = [];
-    if (this.position === 0) {
-      targets = [16, 17, 18 ,19];
-    } else if (this.position === 1) {
-      targets = [12, 13, 14, 15];
-    } else if (this.position === 2) {
-      targets = [5, 6, 33, 34];
-    } else if (this.position === 3) {
-      targets = [47, 48, 49, 50];
-    } else if (this.position === 4) {
-      targets = [37, 38, 39, 40];
+
+  findTarget(students) {
+    let targeted;
+    switch(this.position) {
+      case 0:
+      targeted = [15,16,17,18];
+      break;
+      case 1:
+      targeted = [12,13,14,15,16];
+      break;
+      case 2:
+      targeted = [4,5,6,7,8,32,33,34,35];
+      break;
+      case 3:
+      targeted = [37,38,39,40];
+      break;
+      case 4:
+      targeted = [45,46,47,48,49];
+      break;
     }
+    let targets = [];
+    students.forEach(function(student, i) {
+      targeted.forEach(function(target) {
+        if (student.progress == target) {
+          targets.push(i);
+        }
+      });
+    });
     return targets;
-
   }
-
 }
