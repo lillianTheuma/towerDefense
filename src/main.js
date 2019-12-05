@@ -140,14 +140,13 @@ $(document).ready(function() {
       towerTick++;
       game.towers.towers.forEach(function(tower) {
         if (tower) {
-          const target = tower.findTarget(this.students);
+          const target = tower.findTarget(this.students, tower);
           if (target) {
             this.students[target].takeDamage(tower.damage);
           }
-          this.students[target].takeDamage(tower.damage);
         }
       });
-      game.students.checkHealth();
+      game.money += game.students.checkHealth();
     }, 250);
 
     function attachContactListeners() {

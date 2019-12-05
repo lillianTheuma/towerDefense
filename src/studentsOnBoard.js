@@ -38,11 +38,14 @@ export default class StudentsOnBoard {
   }
 
   checkHealth() {
+    let stopped = 0;
     for (let i = 0; i < this.students.length; i++) {
       if (this.students[i].health < 0) {
+        stopped += this.students[i].maxHealth;
         this.students.removeStudent(i);
       }
     }
+    return stopped;
   }
   checkEscapes() {
     let escapes = 0;
