@@ -2,268 +2,280 @@
 <html>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Finger+Paint|Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:600&display=swap" rel="stylesheet">
 
-  <title>Keep the Zombies Contained</title>
+
+  <title>Coded Out Brains</title>
 </head>
-<body class='apocalypse'>
-  <div id="zombieFont">
-    <h1>Keep the Zombies Contained!</h1>
-    <div class="startButton">
-      <button class="button" id="start" type="button" name="button">START</button>
-    </div>
+<body>
+  <div class="startButton">
+    <p>The students have become zombies due to excessive coding.</p>
+    <p>The clocks are stopped at 4:44 PM to encourage them to stay in the building.</p>
+    <p>Your assistance is needed.</p>
+    <p>Click in the clock to start.</p>
+    <button class="button" id="start" type="button" name="button"><span id='time'>4:44 PM</span></button>
   </div>
 
-  <div class="conatiner">
-    <div id="dialog">
-      <h5>THE STUDENTS HAVE BECOME ZOMBIES!  DON'T LET THEM INFECT THE CITY!</h5>
-      <div id="brainImage">
-        <div id="scoreBoard">
-          <p>zombies harvested:<span id="score">
-          </span></p>
+  <div class="gameDisplay">
+    <div id="zombieFont">
+      <h1>Keep the Zombies Contained!</h1>
+    </div>
+
+      <div id="dialog">
+        <div class='towerDisplayGroup'>
+          <div id="towerSelection">
+            <p>Select Tower:</p>
+            <button id="selectTower1" class="towerButton" type="button" name="button">1</button>
+
+            <button id="selectTower2" class="towerButton" type="button" name="button">2</button>
+
+            <button id="selectTower3" class="towerButton" type="button" name="button">3</button>
+          </div>
+
+          <div class='towerDisplayGroup' id="upgradeTower">
+            <button id="upgrade" class="towerButton" type="button" name="button">UPGRADE TOWER</button>
+          </div>
+
+          <div id="scoreBoard">
+            <p>score:<span id="score">
+            </span></p>
+            <p>money:<span id="money">
+            </span></p>
+            <p>health:<span id="health">
+            </span></p>
+          </div>
+        </div>
+        <div id="brainDisplay">
+
         </div>
       </div>
-      <p>possible story line here:</p>
 
-      <div id="towerSelection">
-        <p>Select Tower</p>
-        <button id="selectTower1" type="button" name="button">Tower1</button>
-        <br>
-        <button id="selectTower2" type="button" name="button">Tower2</button>
-        <br>
-        <button id="selectTower3" type="button" name="button">Tower3</button>
-      </div>
-
-      <div id="upgradeTowerSelection">
-        <p>Upgrades</p>
-        <button id="upgradeTower1" type="button" name="button">Tower1</button>
-        <br>
-        <button id="upgradeTower2" type="button" name="button">Tower2</button>
-        <br>
-        <button id="upgradeTower3" type="button" name="button">Tower3</button>
-      </div>
+    <div id="mapDiv">
+    <table id="Table_01" width="1024" height="768" border="0" cellpadding="0" cellspacing="0">
+      	<tr id="01">
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      	</tr>
+      	<tr id="02">
+      		<td id="path0"></td>
+      		<td id="path1"></td>
+      		<td id="path2"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="tower0"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      	</tr>
+      	<tr id="03">
+      		<td></td>
+      		<td></td>
+      		<td id="path3"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path11"></td>
+      		<td id="path12"></td>
+      		<td id="path13"></td>
+      		<td id="path14"></td>
+      		<td id="path15"></td>
+      		<td id="path16"></td>
+      		<td id="path17"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      	</tr>
+      	<tr id="04">
+      		<td></td>
+      		<td></td>
+      		<td id="path4"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path10"></td>
+      		<td></td>
+      		<td></td>
+      		<td id="tower1"></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path18"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      	</tr>
+      	<tr id="05">
+      		<td></td>
+      		<td></td>
+      		<td id="path5"></td>
+      		<td id="path6"></td>
+      		<td id="path7"></td>
+      		<td id="path8"></td>
+      		<td id="path9"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path19"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      	</tr>
+      	<tr id="06">
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="tower2"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path20"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      	</tr>
+      	<tr id="07">
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path34"></td>
+      		<td id="path33"></td>
+      		<td id="path32"></td>
+      		<td id="path31"></td>
+      		<td id="path30"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path22"></td>
+      		<td id="path21"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      	</tr>
+      	<tr id="08">
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path35"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path29"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path23"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      	</tr>
+      	<tr id="09">
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path36"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path28"></td>
+      		<td id="path27"></td>
+      		<td id="path26"></td>
+      		<td id="path25"></td>
+      		<td id="path24"></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path51"></td>
+      		<td id="path52"></td>
+      	</tr>
+      	<tr id="10">
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path37"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="tower3"></td>
+      		<td></td>
+      		<td id="path50"></td>
+      		<td></td>
+      	</tr>
+      	<tr id="11">
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="path38"></td>
+      		<td id="path39"></td>
+      		<td id="path40"></td>
+      		<td id="path41"></td>
+      		<td id="path42"></td>
+      		<td id="path43"></td>
+      		<td id="path44"></td>
+      		<td id="path45"></td>
+      		<td id="path46"></td>
+      		<td id="path47"></td>
+      		<td id="path48"></td>
+      		<td id="path49"></td>
+      		<td</td>
+      	</tr>
+      	<tr id="12">
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td id="tower4"></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      		<td></td>
+      	</tr>
+      </table>
     </div>
 
-  <div id="mapDiv">
-  <table id="Table_01" width="1024" height="768" border="0" cellpadding="0" cellspacing="0">
-    	<tr id="01">
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr id="02">
-    		<td id="path0"></td>
-    		<td id="path1"></td>
-    		<td id="path2"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="tower0"></td>
-    		<td id="towerR0"></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr id="03">
-    		<td></td>
-    		<td></td>
-    		<td id="path3"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path11"></td>
-    		<td id="path12"></td>
-    		<td id="path13"></td>
-    		<td id="path14"></td>
-    		<td id="path15"></td>
-    		<td id="path16"></td>
-    		<td id="path17"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr id="04">
-    		<td></td>
-    		<td></td>
-    		<td id="path4"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path10"></td>
-    		<td></td>
-    		<td></td>
-    		<td id="tower1"></td>
-    		<td id ="towerR1"></td>
-    		<td></td>
-    		<td id="path18"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr id="05">
-    		<td></td>
-    		<td></td>
-    		<td id="path5"></td>
-    		<td id="path6"></td>
-    		<td id="path7"></td>
-    		<td id="path8"></td>
-    		<td id="path9"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path19"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr id="06">
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="tower2"></td>
-    		<td id="towerR2"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path20"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr id="07">
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path34"></td>
-    		<td id="path33"></td>
-    		<td id="path32"></td>
-    		<td id="path31"></td>
-    		<td id="path30"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path22"></td>
-    		<td id="path21"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr id="08">
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path35"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path29"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path23"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    	<tr id="09">
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path36"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path28"></td>
-    		<td id="path27"></td>
-    		<td id="path26"></td>
-    		<td id="path25"></td>
-    		<td id="path24"></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path51"></td>
-    		<td id="path52"></td>
-    	</tr>
-    	<tr id="10">
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path37"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="tower3"></td>
-    		<td id="towerR3"></td>
-    		<td id="path50"></td>
-    		<td></td>
-    	</tr>
-    	<tr id="11">
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="path38"></td>
-    		<td id="path39"></td>
-    		<td id="path40"></td>
-    		<td id="path41"></td>
-    		<td id="path42"></td>
-    		<td id="path43"></td>
-    		<td id="path44"></td>
-    		<td id="path45"></td>
-    		<td id="path46"></td>
-    		<td id="path47"></td>
-    		<td id="path48"></td>
-    		<td id="path49"></td>
-    		<td</td>
-    	</tr>
-    	<tr id="12">
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td id="tower4"></td>
-    		<td id="towerR4"></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    		<td></td>
-    	</tr>
-    </table>
-  </div>
-  </div>
+</div>
+<div class="apocalypse">
+  <p>GAME<br>OVER!</p>
+  <button type="button" id='gameOverButton'>RESTART</button>
+</div>
 
 </body>
 </html>
