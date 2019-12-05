@@ -181,20 +181,32 @@ $(document).ready(function() {
                     $("#tower" + i).append(towerSprite);
                   }
                   // upgrade a tower currently in that position
+                  // const towerSprites = [
+                  //   [tower1_t1, tower1_t2, tower1_t3L, tower1_t3R],
+                  //   [tower2_t1, tower2_t2, tower2_t3L, tower2_t3R],
+                  //   [tower3_t1, tower3_t2, tower3_t3L, tower3_t3R]
+                  // ];
                 } else {
+                  console.log("pre upgrade tower level:", game.towers.towers[i].level);
                   game.upgradeTower(i);
-                  if (game.towers.towers.level === 3) {
+                  console.log("tower level:", game.towers.towers[i].level);
+                  if (game.towers.towers[i].level === 3 && !game.towers.towers[i].fullyUpgraded) {
+                    $("#tower" + i).html("");
                     const towerSpriteL = new Image();
                     const towerSpriteR = new Image();
-                    towerSpriteL.src = towerSprites[j][game.towers.towers.level];
-                    towerSpriteR.src = towerSprites[j][game.towers.towers.level+1];
+                    towerSpriteL.src = towerSprites[j][game.towers.towers[i].level-1];
+                    towerSpriteR.src = towerSprites[j][game.towers.towers[i].level];
                     $("#tower" + i).append(towerSpriteL);
                     $("#towerR" + i).append(towerSpriteR);
                   }
-                  else {
+                  else if (game.towers.towers[i].level === 2) {
+                    $("#tower" + i).html("");
                     const towerSprite = new Image();
-                    towerSprite.src = towerSprites[j][game.towers.towers.level];
+                    towerSprite.src = towerSprites[j][game.towers.towers[i].level-1];
                     $("#tower" + i).append(towerSprite);
+
+                  } else {
+                    console.log("no more upgrades!");
                   }
                 }
               }
