@@ -20,15 +20,17 @@ export default class Tower {
     const towerPositionCoords =
     [[12,1],[9,3],[3,4],[12,9],[3,11]];
     let nearestTarget = [0,0]
-    students.forEach(function(student, i) {
-      const vertDistance = Math.abs(pathwayCoords[student.position][1]-towerPositionCoords[1]);
-      const horizontalDistance = Math.abs(pathwayCoords[student.position][0]-towerPositionCoords[0]);
+    students.students.forEach(function(student, i) {
+      const vertDistance = Math.abs(pathwayCoords[student.position]-towerPositionCoords[1]);
+      const horizontalDistance = Math.abs(pathwayCoords[student.position]-towerPositionCoords[0]);
       const distance = Math.sqrt((Math.pow(vertDistance,2))+(Math.pow(horizontalDistance,2)));
-      if (distance > nearestTarget[0] && distance < tower.range) {
+      if (distance > nearestTarget[0] && distance < this.range) {
         nearestTarget = [distance, i];
+        console.log(nearestTarget);
       }
     });
     if (nearestTarget[1]) {
+      console.log("I have a target!");
       return nearestTarget[1];
     } else {
       return false;

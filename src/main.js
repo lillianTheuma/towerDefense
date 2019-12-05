@@ -64,7 +64,6 @@ $(document).ready(function() {
     $('#start').hide();
     attachContactListeners();
     let game = new GameState();
-    console.log(game)
     let creationMode = null;
     let time = 0;
     let spaceNumber = 53;
@@ -92,7 +91,6 @@ $(document).ready(function() {
           game.students.addStudent(new Student(8,1,8));
         }
         game.students.advanceStudents();
-
         game.health -= game.students.checkEscapes();
         // Increment game health down - gameState.js
 
@@ -135,14 +133,14 @@ $(document).ready(function() {
     let towerTick = 0;
     setInterval(() => {
       towerTick++;
-      game.towers.towers.forEach(function(tower) {
-        if (tower) {
-          const target = tower.findTarget(this.students, tower);
+      for (let i=0;i<game.towers.towers.length;i++) {
+        if (game.towers.towers[i]) {
+          const target = game.towers.towers[i].findTarget(game.students, game.towers.towers[i]);
           if (target) {
-            this.students[target].takeDamage(tower.damage);
+            game.students[target].takeDamage(game.towers.towers[i].damage);
           }
         }
-      });
+      }
       game.money += game.students.checkHealth();
     }, 250);
 
@@ -164,7 +162,6 @@ $(document).ready(function() {
           if (this.id == "tower" + i) {
             for (let j = 0; j < 3; j++) {
               if (creationMode == game.towerTypes.types[j]) {
-                console.log(game.towerTypes.findTowerByID(j));
                 game.buyTower(j,i);
                 if (!game.towers.towers[i]) {
                   const towerSprite = new Image();
