@@ -6,25 +6,23 @@ background-image: url('img/gameOver.jpg');
 }  */
 
 
-#scoreBoard {
-  font-family: 'Finger Paint', cursive;
-  text-shadow: 2px  #1E4207;
-  font-variant: small-caps slashed-zero;
-  font-size: 25px;
-  word-spacing: 1px;
-  line-height: 20px;
-  color:#3e8e41;
-}
-
 #start{
+  background-color: black;
+  font-family: 'Segment7Standard';
+  font-weight: normal;
+  font-style: italic;
+  font-size: 100px;
+  /* font-family: 'digital-7', sans-serif; */
   color: red;
-  background-image: url('img/start.jpeg');
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 500px;
+  text-shadow: 1px 1px #A35855;
+  padding: 50px;
   border-radius: 15px;
   filter: grayscale(50%);
-  box-shadow: 5px 10px grey;
+  box-shadow: 5px 5px 5px 10px grey;
+}
+.towers{
+  padding: 10px;
+  font-size: 15px;
 }
 
 #mapDiv {
@@ -50,20 +48,15 @@ background-image: url('img/gameOver.jpg');
   border-style: inset;
 }
 
-#towerSelection {
-  float: right;
-}
-
 #dialog{
-padding:20px;
-letter-spacing:3px;
+  padding: 20px;
+letter-spacing:4px;
 word-spacing: 2px;
 font-family:'Special Elite', cursive;
 font-size: 20px;
 color: white;
-font-variant: small-caps slashed-zero;
-line-height: 150%;
-width: 300px;
+line-height: 120%;
+width: 350px;
 height: 700px;
 border-radius: 15px;
 background-color: #02071D;
@@ -71,14 +64,16 @@ border:10px solid grey;
 border-style: inset;
 float: right;
 }
+#scoreBoard{
+  color: #49F30A;
+  font-size: 10px;
+  text-shadow: 2px 2px yellow;
+  float: left;
+}
+title{
 
-#brainImage {
   background-image: url('img/brain.png');
   background-size: contain;
-  background-repeat: no-repeat;
-  height: 200px;
-  width: 200px;
-  filter: grayscale(50%);
 }
 
 td {
