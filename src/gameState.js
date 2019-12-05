@@ -10,23 +10,27 @@ export default class GameState {
     this.towerTypes = new TowerTypes(),
     this.students = new StudentsOnBoard(),
     this.health = 200,
-    this.money = 1000;
+    this.money = 1000000;
   }
   buyTower(typeID, position) {
-    if (this.towerTypes.findTowerByID(typeID).cost <= this.money) {
-      let tower = this.towerTypes[typeID];
+    console.log(this.towerTypes.types[typeID].cost);
+    if (this.towerTypes.types[typeID].cost <= this.money) {
+      const tower = this.towerTypes.types[typeID];
       this.towers.addTower(tower, position);
-      this.money -= this.towerTypes.findTowerByID(typeID).cost;
+      this.money -= tower.cost;
+      console.log(this.towers);
       return true;
-    } else if (this.towerTypes.findTowerByID(typeID)){
-      console.log("You cannot afford this upgrade");
+    } else if (this.towers.towers[position]){
+      console.log("There is already a tower here");
+    } else if (this.towerTypes.types[typeID].cost > this.money) {
+      console.warn("You can't afford that tower!");
     } else {
       console.error("You are attempting to buy a tower with an invalid type ID!");
       return false ;
     }
   }
   sellTower(position) {
-    if (this.towers[position]) {
+    if (this.towers.towers[position]) {
       this.money += this.towers[position].value;
       this.towers[position] = false;
     } else {
@@ -34,15 +38,22 @@ export default class GameState {
     }
   }
   upgradeTower(position) {
-    const price = this.towers[position].price * (this.towers[position].level + 1);
-    if (this.money >= price) {
-      this.towers[position].levelUp(this.towerTypes[this.towers.typeId]);
-      this.towers[position].value += price;
-      this.money -= price;
-    } else if (!this.towers[position]){
-      console.warn("The tower you are attempting to upgrade is not present!");
-    } else {
-      console.warn("You are attempting to upgrade a tower at an invalid location!");
+    if (this.towers.towers[position].level >= 3){
+      this.towers.towers[position].fullyUpgraded = true;
+    }
+    if (this.towers.towers[position].level < 3) {
+      console.log(this.towers.towers[position].cost);
+      const price = this.towers.towers[position].cost * (this.towers.towers[position].level + 1);
+      console.log("money: " + this.money + "price" + price);
+      if (this.money >= price) {
+        this.towers.towers[position].levelUp();
+        this.towers.towers[position].value += price;
+        this.money -= price;
+      } else if (!this.towers.towers[position]){
+        console.warn("The tower you are attempting to upgrade is not present!");
+      } else {
+        console.warn("You are attempting to upgrade a tower at an invalid location!");
+      }
     }
   }
 }

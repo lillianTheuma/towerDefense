@@ -6,7 +6,7 @@ export default class TowerTypes {
   }
   findTowerByID(id) {
     this.types.forEach(function(type) {
-      if (type.id == id) {
+      if (type.typeID == id) {
         return type;
       }
     });
