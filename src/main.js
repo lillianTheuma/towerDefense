@@ -163,9 +163,17 @@ $(document).ready(function() {
       $('#mapDiv').on("click", "td", function() {
         for (let i = 0; i <= 5; i++) {
           if (this.id == "tower" + i) {
-            const towerSprite = new Image();
-            towerSprite.src = towerSprites[i][0];
-            $("#tower" + i).append(towerSprite);
+            for (let j = 0; j < 3; j++) {
+              if (creationMode == game.towerTypes.types[j]) {
+                console.log(game.towerTypes.findTowerByID(j));
+                game.buyTower(j,i);
+                if (!game.towers.towers[i]) {
+                  const towerSprite = new Image();
+                  towerSprite.src = towerSprites[j][0];
+                  $("#tower" + i).append(towerSprite);
+                }
+              }
+            }
           }
         }
       });
