@@ -144,10 +144,9 @@ $(document).ready(function() {
           if (target) {
             this.students[target].takeDamage(tower.damage);
           }
-          this.students[target].takeDamage(tower.damage);
         }
       });
-      game.students.checkHealth();
+      game.money += game.students.checkHealth();
     }, 250);
 
     function attachContactListeners() {
